@@ -1,23 +1,20 @@
 import React from "react";
+import { Card } from "react-bulma-components";
+
+const { Header, Title, Content } = Card;
 
 function PlantCard() {
     return (
-        <div class="container is-fuild">
-            <div>
-                <div class="card">
-                    <header class="card-header">
-                        <p class="card-header-title">
-                            
-                        </p>
-                    </header>
-                    <div class="card-content">
-                        <div class="content">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Card>
+            <Card.Header>
+                <Card.Header.Title>
+
+                </Card.Header.Title>
+            </Card.Header>
+            <Card.Content>
+                
+            </Card.Content>
+        </Card>
     )
 }
 
