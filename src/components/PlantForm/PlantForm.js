@@ -1,49 +1,52 @@
 import React from "react";
+import { Form } from "react-bulma-components";
+
+const { Input, Field, Control, Label } = Form;
 
 function PlantForm() {
     return (
-        <div class="container is-fluid">
-            <div class="field">
-                <label class="label">Plant Name</label>
-                <input class="input" type="text" id="plantname"></input>
-            </div>
-            <div class="field">
-                <label class="label">Description</label>
-                <input class="input" type="text" id="description"></input>
-            </div>
-            <div class="field">
-                <label class="label">Habit</label>
-                <input class="input" type="text" id="habit"></input>
-            </div>
-            <div class="field">
-                <label class="label">Life Cycle</label>
-                <input class="input" type="text" id="lifeCycle"></input>
-            </div>
-            <div class="field">
-                <label class="label">Sun Requirements</label>
-                <input class="input" type="text" id="sunRequirements"></input>
-            </div>
-            <div class="field">
-                <label class="label">Water Requirements</label>
-                <input class="input" type="text" id="waterRequirements"></input>
-            </div>
-            <div class="field">
-                <label class="label">Uses</label>
-                <input class="input" type="text" id="uses"></input>
-            </div>
-            <div class="field">
-                <label class="label">Edible</label>
-                <input class="input" type="text" id="edible"></input>
-            </div>
-            <div class="field">
-                <label class="label">Time to Fruit</label>
-                <input class="input" type="text" id="timeToFruit"></input>
-            </div>
-            <div class="field">
-                <label class="label">Recipes</label>
-                <input class="input" type="text" id="recipes"></input>
-            </div>
-        </div>
+        <Form>
+            <Form.Field>
+                <Form.Label>Plant Name</Form.Label>
+                <Form.Input type="text"></Form.Input>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Description</Form.Label>
+                <Form.Input type="text"></Form.Input>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Habit</Form.Label>
+                <Form.Input type="text"></Form.Input>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Life Cycle</Form.Label>
+                <Form.Input type="text"></Form.Input>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Sun Requirements</Form.Label>
+                <Form.Input type="text"></Form.Input>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Water Requirements</Form.Label>
+                <Form.Input type="text"></Form.Input>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Uses</Form.Label>
+                <Form.Input type="text"></Form.Input>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Edible</Form.Label>
+                <Form.Input type="text"></Form.Input>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Time to Fruit</Form.Label>
+                <Form.Input type="text"></Form.Input>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Recipes</Form.Label>
+                <Form.Input type="text"></Form.Input>
+            </Form.Field>
+        </Form>
     )
 }
 
