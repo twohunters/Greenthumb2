@@ -8,11 +8,11 @@ function PlantCard() {
         <Card>
             <Card.Header>
                 <Card.Header.Title>
-
+                    {props.plantName}
                 </Card.Header.Title>
             </Card.Header>
             <Card.Content>
-                
+                {props.plantDescription}
             </Card.Content>
         </Card>
     )

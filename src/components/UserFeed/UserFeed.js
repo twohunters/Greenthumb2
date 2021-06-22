@@ -11,15 +11,15 @@ function UserFeed() {
                 Your Account
             </Heading>
             <Heading subtitle>
-                {user.firstName} {user.lastName}
+                {props.firstName} {props.lastName}
             </Heading>
             <Box>
                 <h3>About You</h3>
-                <p>{user.aboutYou}</p>
+                <p>{props.userDescription}</p>
             </Box>
             <Box>
                 <h3>Your Gardens</h3>
-                <div>{user.gardens}</div>
+                <div>{props.userGardens}</div>
             </Box>
         </Content>
     )
