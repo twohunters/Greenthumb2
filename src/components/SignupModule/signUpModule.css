@@ -4,21 +4,30 @@
     top:0;
     right:0;
     bottom: 0;
-    background-color:green;
     display: flex;
     align-items: center;
     justify-content:center;
 
 }
 .modal-content{
-    width:px;
+    width:500px;
+    background-color: grey;
+}
+.modal-footer{
+    margin: 20px;
+}
+.modal-header{
+    padding: 20px;
 }
 
-.modal-header, .modal-footer{
-    padding: 10px;
+.button{
+    float:right;
 }
-.modal-body {
-padding: 10px;
-border-top: 1px;
-border-bottom: 1px
+
+.field {
+    padding: 30px
+}
+.modal-title{
+   text-align: center;
+   color: white;
 }

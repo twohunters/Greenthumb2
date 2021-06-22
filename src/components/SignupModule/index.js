@@ -4,7 +4,6 @@ import './signUpModule.css'
 import {Button} from 'react-bulma-components';
 import {Form} from 'react-bulma-components';
 
-import ImageUploader from 'react-images-upload';
 const SignUpModal = props => {
     if (!props.show){
         return null
@@ -42,11 +41,13 @@ const SignUpModal = props => {
                     <Form.Input type='text' name='About'/>
                 </Form.Field>
                 </div>
+                
                 <div className="modal-footer">
-                    <Button onClick={props.onClose} align='right' className="button">Sign up</Button>
-                    <Button onClick={props.onClose} align='right' className="button ">Close</Button>
+                    <Button onClick={props.onClose}  className="button">Sign up</Button>
+                    <Button onClick={props.onClose}  className="button ">Close</Button>
                 </div>
-            </div>
+                </div>
+            
         </div>
         
     )

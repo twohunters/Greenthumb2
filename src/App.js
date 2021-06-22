@@ -1,16 +1,19 @@
 
-import React,{useState} from 'react'
+import React from 'react'
 import './App.css';
 import Nav from './components/Nav';
-import SignUpModal from './components/SignupModule';
-import LoginModule from './components/LoginModule'
+import MenuContainer from './components/MenuContainer';
+import Size from './components/pages/size'
 
 function App() {
-  const[show,setShow] = useState(false)
   return (
     <div>
-    <Nav>
+    {/* <Nav>
     </Nav>
+    <MenuContainer/> */}
+    <Size>
+
+    </Size>
 
     </div>
   

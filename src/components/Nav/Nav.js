@@ -8,8 +8,7 @@ const {Brand, Burger, Menu, Container, Item, Link} = Navbar
 
 
 function Nav(){
-    const[showLogin,setShowLogin] = useState(false)
-    const[showSignup,setShowSignup] = useState(false)
+    const[show,setShow] = useState(false)
     return(
     <Navbar color ="primary">
         <Navbar.Container>
@@ -19,10 +18,10 @@ function Nav(){
         </Navbar.Container>
         <Navbar.Container align="end">
             <Navbar.Item>
-                <Button onClick={()=> setShowLogin(true)} color="primary">Login</Button>
-                <LoginModule onClose={() => setShowLogin(false)} show ={showLogin}/>
-                <Button onClick={()=> setShowSignup(true)} color="primary">Sign Up</Button>
-                 <SignUpModal onClose={() => setShowSignup(false)} show ={showSignup}/> 
+                <Button onClick={()=> setShow(true)} color="primary">Login</Button>
+                <LoginModule onClose={() => setShow(false)} show ={show}/>
+                <Button onClick={()=> setShow(true)} color="primary">Sign Up</Button>
+                <SignUpModal onClose={() => setShow(false)} show ={show}/>
             </Navbar.Item>
 
         </Navbar.Container>

@@ -4,7 +4,6 @@ import './LoginModule.css'
 import {Button} from 'react-bulma-components';
 import {Form} from 'react-bulma-components';
 
-import ImageUploader from 'react-images-upload';
 const LoginModule = props => {
     if (!props.show){
         return null
@@ -15,7 +14,7 @@ const LoginModule = props => {
         <div className="modal">
             <div className="modal-content">
                 <div className="modal-header">
-                    <h4 className="modal-title">Sign Up!</h4>
+                    <h4 className="modal-title">Log In</h4>
                 </div>
                 <div className="modal-body">
                 <Form.Field>

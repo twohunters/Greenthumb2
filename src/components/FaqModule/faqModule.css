@@ -1,0 +1,62 @@
+
+
+  .modal{
+    position: fixed;
+    left: 0;; 
+    top:0;
+    right:0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.modal-content{
+    width:500px;
+    background-color: grey;
+}
+.modal-footer{
+    margin: 20px;
+}
+.modal-header{
+    padding: 20px;
+}
+
+.button{
+    float:right;
+}
+
+.field {
+    padding: 30px
+}
+.modal-title{
+   text-align: center;
+}
+.accordion {
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  .accordion-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #3a4b4e;
+    color: ivory;
+  }
+  
+  .accordion-title:hover {
+    background-color: #293133;
+  }
+  
+  .accordion-title,
+  .accordion-content {
+    padding: 1rem;
+  }
+  
+  .accordion-content {
+    background-color: #ebedee;
+  }
