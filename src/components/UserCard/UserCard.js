@@ -8,7 +8,7 @@ function UserCard() {
         <Card>
             <Card.Header>
                 <Card.Header.Title>
-                    {props.userName}
+                {props.firstName} {props.lastName}
                 </Card.Header.Title>
             </Card.Header>
             <Card.Content>
