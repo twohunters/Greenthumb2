@@ -19,6 +19,7 @@ function GardenCard(props){
             </Card.Header>
             <Card.Content>
                 {props.gardenPlants}
+                {/* do we want a list of plants or maybe the date created */}
             </Card.Content>
         </Card>
     )
