@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import { Card } from "react-bulma-components";
 const {Image} = Card;
 
-function Counter = (props)
+
 
 function GardenView(props){
     return(
@@ -11,11 +11,11 @@ function GardenView(props){
         <Card>
             <Card.Image
             size="4by3"
-            alt={props.garden.plantName[i]}
+            alt={props.garden.plantName}
         src={props.imageSrc}
         // if (props.garden.plantName === props.garden.plantName[i]){
             //counter
-        }
+        
       />
         </Card>
     )
