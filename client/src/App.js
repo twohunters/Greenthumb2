@@ -8,15 +8,15 @@ import Size from './components/pages/size'
 function App() {
   return (
     <div>
-    {/* <Nav>
+     <Nav>
     </Nav>
-    <MenuContainer/> */}
+    <MenuContainer/> 
     <Size>
 
     </Size>
 
     </div>
-  
+
   );
 }
 
