@@ -5,6 +5,8 @@ const {Field, Label, Checkbox, Control} = Form
 
 
 function Plants(){
+  //Get plant names from database, we want to render a checkbox next to the name of the plant for each plant.
+  //ask about setting a for loop to create a useState for each plant's check box
     const [tocAgreed, setTocAgreed] = useState(false);
     const plantArray =[]
     let i;
@@ -18,7 +20,7 @@ function Plants(){
               return setTocAgreed(e.target.checked);
             }}
           >
-            {'  '}`${plantArray[i].name}
+            {'  '}{plantArray[i].name}
           </Form.Checkbox>
           </Form.Control>
         </Form.Field>

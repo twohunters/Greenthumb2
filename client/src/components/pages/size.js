@@ -7,42 +7,45 @@ const {Field, Label, Checkbox, Control} = Form
 
 
 function Size(){
-    const [tocAgreed, setTocAgreed] = useState(false);
+    const [tocAgreed1, setTocAgreed1] = useState(false);
+    const [tocAgreed2, setTocAgreed2] = useState(false);
+    const [tocAgreed3, setTocAgreed3] = useState(false);
+    const [tocAgreed4, setTocAgreed4] = useState(false);
 return(
     
     <Form.Field>
         <Form.Control>
           <Form.Checkbox
-            checked={tocAgreed}
+            checked={tocAgreed1}
             onChange={(e) => {
-              return setTocAgreed(e.target.checked);
+              return setTocAgreed1(e.target.checked);
             }}
           >
             {'  '}Individual (100 square feet)
           </Form.Checkbox>
           <br></br>
           <Form.Checkbox
-            checked={tocAgreed}
+            checked={tocAgreed2}
             onChange={(e) => {
-              return setTocAgreed(e.target.checked);
+              return setTocAgreed2(e.target.checked);
             }}
           >
             {'  '}Couple (200 square feet)
           </Form.Checkbox>
           <br></br>
           <Form.Checkbox
-            checked={tocAgreed}
+            checked={tocAgreed3}
             onChange={(e) => {
-              return setTocAgreed(e.target.checked);
+              return setTocAgreed3(e.target.checked);
             }}
           >
             {'  '}Average Family (300-500 square feet)
           </Form.Checkbox>
           <br></br>
           <Form.Checkbox
-            checked={tocAgreed}
+            checked={tocAgreed4}
             onChange={(e) => {
-              return setTocAgreed(e.target.checked);
+              return setTocAgreed4(e.target.checked);
             }}
           >
             {'  '}Large Family(5+) (600-800 square feet)
