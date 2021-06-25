@@ -15,6 +15,9 @@ const userSchema = new Schema({
         type: String,
        required: true
     },
+    Garden_id:{
+        type:String
+    }
 
 })
 const User = mongoose.model("User", userSchema)

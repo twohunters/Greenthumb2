@@ -7,7 +7,7 @@ export default {
     },
 
     //get all plants
-    getPlants: function () {
+    getAllPlants: function () {
         return axios.get("/api/plants");
     },
     //get plant by id
