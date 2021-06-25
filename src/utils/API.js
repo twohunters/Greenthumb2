@@ -7,19 +7,19 @@ export default {
     },
 
     //get all plants
-    getPlant: function () {
+    getPlants: function () {
         return axios.get("/api/plants");
     },
     //get plant by id
-    getPlant: function (id) {
+    getPlants: function (id) {
         return axios.get("/api/plants/" + id);
     },
     //delete plant by id
-    deletePlant: function(id){
+    deletePlants: function(id){
         return axios.delete("/api/plants" + id);
     },
     //save plant to DB
-    savePlant: function (plantData) {
+    savePlants: function (plantData) {
         return axios.post("/api/plants", plantData);
     },
 

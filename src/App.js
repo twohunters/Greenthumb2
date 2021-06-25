@@ -2,15 +2,16 @@
 import React from 'react'
 import './App.css';
 import Nav from './components/Nav';
-import MenuContainer from './components/MenuContainer';
 
+import CreateGarden from './pages/CreateGarden';
 
 function App() {
   return (
     <div>
      <Nav>
     </Nav>
-    <MenuContainer/> 
+    
+    <CreateGarden></CreateGarden>
 
 
     </div>
