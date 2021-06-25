@@ -11,9 +11,7 @@ function App() {
      <Nav>
     </Nav>
     <MenuContainer/> 
-    <Size>
 
-    </Size>
 
     </div>
 
