@@ -8,7 +8,7 @@ import { Navbar } from 'react-bulma-components';
 import { Form } from "react-bulma-components";
 
 const { Input, Field, Control, Label, Checkbox, } = Form;
-const {Brand, Burger, Menu, Container, Item, Link} = Navbar
+const {Brand, Burger, Menu, Container, Item, } = Navbar
 
 
 function CreateGarden() {
@@ -70,9 +70,13 @@ function CreateGarden() {
             <Form.Field>
                 <Form.Control>
                 {plants.map(plant => (
-                    <Form.Checkbox>
+                    <Form.Checkbox
+                    onChange={handleInputChange}
+                    name={plant.name}
+                    key={plant.id}>
                         {plant.name}
                     </Form.Checkbox>
+                ))}
                 </Form.Control>
             </Form.Field>
           
@@ -85,3 +89,5 @@ function CreateGarden() {
     </div>
     )
 }
+
+export default CreateGarden;
