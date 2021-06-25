@@ -13,3 +13,4 @@ function GardenView(props){
         </Card>
     )
 }
+export default GardenView
