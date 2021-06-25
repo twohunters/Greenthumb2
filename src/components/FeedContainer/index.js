@@ -4,7 +4,7 @@ import { Image } from "react-bulma-components";
 import { Heading } from "react-bulma-components";
 import { Block } from "react-bulma-components";
 
-function FeedContainer() {
+const FeedContainer = props => {
     return(
         <Content>
             <Image>

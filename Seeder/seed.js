@@ -228,7 +228,7 @@ const plantSeed =  [{
     time_to_fruit: 40
 }
 ]
-db.Workout.deleteMany({})
+db.Plant.deleteMany({})
   .then(() => db.Plant.collection.insertMany(plantSeed))
   .then((data) => {
     console.log(data.result.n + ' records inserted!');

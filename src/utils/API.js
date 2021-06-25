@@ -43,10 +43,10 @@ export default {
 
 
     //get all users
-    getUser: function(){
+    getAllUsers: function(){
         return axios.get("/api/user");
     },
-    //get user by ud
+    //get user by id
     getUser: function(id){
         return axios.get("api/user/" + id);
     },
