@@ -3,7 +3,7 @@ import { Card } from "react-bulma-components";
 
 const { Header, Title, Content } = Card;
 
-function UserCard() {
+function UserCard(props) {
     return (
         <Card>
             <Card.Header>
