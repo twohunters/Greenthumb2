@@ -3,7 +3,7 @@ import React from 'react'
 import './App.css';
 import Nav from './components/Nav';
 import MenuContainer from './components/MenuContainer';
-import Size from './components/pages/size'
+
 
 function App() {
   return (
@@ -11,9 +11,7 @@ function App() {
      <Nav>
     </Nav>
     <MenuContainer/> 
-    <Size>
 
-    </Size>
 
     </div>
 
