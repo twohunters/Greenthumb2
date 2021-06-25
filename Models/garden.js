@@ -9,3 +9,5 @@ const gardenSchema = new Schema({
         default: undefined
     }
 })
+const Garden = mongoose.model("Garden", gardenSchema)
+module.exports = Garden

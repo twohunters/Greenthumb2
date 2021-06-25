@@ -1,15 +1,32 @@
 //slide 3
-import React from "react";
+import React,{useState,useEffect} from "react";
 import './signUpModule.css'
 import {Button} from 'react-bulma-components';
 import {Form} from 'react-bulma-components';
-
+import API from "../../utils/API"
 const SignUpModal = props => {
+    const [formObject,setFormObject]= useState({})
     if (!props.show){
         return null
     }
-
- 
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({...formObject, [name]: value})
+      };
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        if (formObject.FistName && formObject.LastName && formObject.Email && formObject.Password) {
+          API.saveUser({
+            firstName: formObject.FirstName,
+            lastName: formObject.LastName,
+            email: formObject.email,
+            password:formObject.password,
+            about: formObject.about
+          })
+          .then(res=>console.log(res))
+            .catch(err => console.log(err));
+        }
+      };
     return (
         <div className="modal">
             <div className="modal-content">
@@ -21,29 +38,29 @@ const SignUpModal = props => {
                     <Form.Label>
                         First Name:
                     </Form.Label>
-                    <Form.Input type='text' name='First Name'/>
+                    <Form.Input onChange={handleInputChange} id="firstName" type='text' name='FirstName'/>
                     <Form.Label>
                         Last Name
                     </Form.Label>
-                    <Form.Input type='text' name='Last Name'/>
+                    <Form.Input onChange={handleInputChange} id="lastName" type='text' name='LastName'/>
                     <Form.Label>
                         Email
                     </Form.Label>
-                    <Form.Input type='text' name='Email'/>
+                    <Form.Input onChange={handleInputChange} id="email" type='text' name='Email'/>
                     <Form.Label>
                         Password
                     </Form.Label>
-                    <Form.Input type='password' name='Password'/>
+                    <Form.Input onChange={handleInputChange} id="password"type='password' name='Password'/>
                     <Form.Label>
                         About You
                         </Form.Label>
                     
-                    <Form.Input type='text' name='About'/>
+                    <Form.Input id='about' type='text' name='About'/>
                 </Form.Field>
                 </div>
                 
                 <div className="modal-footer">
-                    <Button onClick={props.onClose}  className="button">Sign up</Button>
+                    <Button  onClick={handleFormSubmit}  className="button">Sign up</Button>
                     <Button onClick={props.onClose}  className="button ">Close</Button>
                 </div>
                 </div>

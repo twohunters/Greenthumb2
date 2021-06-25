@@ -7,14 +7,14 @@
     display: flex;
     align-items: center;
     justify-content:center;
-
 }
 .modal-content{
     width:500px;
     background-color: grey;
+    padding-bottom: 20px;
 }
 .modal-footer{
-    margin: 20px;
+    margin-bottom: 20px;
 }
 .modal-header{
     padding: 20px;
@@ -22,6 +22,7 @@
 
 .button{
     float:right;
+    margin-bottom: 20px;
 }
 
 .field {

@@ -4,7 +4,7 @@ import './menuContainer.css'
 import FaqModule from '../FaqModule'
 import HowToModule from '../HowtoModule'
 import { BrowserRouter as Router, Route } from "react-router-dom"
-import GardenView from '../GardenView'
+//import GardenView from '../GardenView'
 
 function MenuContainer() {
     const[showfaq,setShowfaq] = useState(false)
@@ -15,7 +15,7 @@ function MenuContainer() {
   <a href="#" >Create a Garden</a>
   
   <a href="#" >View All Plants</a>
-  <Route path="/CreateGarden" exact component={GardenView}/>
+  {/* <Route path="/CreateGarden" exact component={GardenView}/> */}
   <a href="#" >View All Gardens</a>
   <a href="#" >View All Users</a>
   <a href="#" >Add to Our Plant DB</a>
