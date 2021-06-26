@@ -11,7 +11,7 @@ function App() {
      <Nav>
     </Nav>
     
-    <CreateGarden></CreateGarden>
+    <CreateGarden/>
 
 
     </div>

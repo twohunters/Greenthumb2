@@ -8,10 +8,11 @@ export default {
 
     //get all plants
     getPlants: function () {
+        console.log("PING!!!")
         return axios.get("/api/plants");
     },
     //get plant by id
-    getPlants: function (id) {
+    getPlant: function (id) {
         return axios.get("/api/plants/" + id);
     },
     //delete plant by id
@@ -25,7 +26,7 @@ export default {
 
 
     //get all gardens
-    getGarden: function (){
+    getGardens: function (){
         return axios.get("/api/gardens");
     },
     //get garden by id
