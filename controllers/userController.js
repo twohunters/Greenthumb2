@@ -6,7 +6,7 @@ create: function(req,res){
     .then(dbModel=>res.json(dbModel))
     .catch(err=>res.status(500).json(err))
 },
-findbyId: function(req,res){
+findById: function(req,res){
     db.Users
     .findById(req.params.id)
     .then(dbModel=>res.json(dbModel))
