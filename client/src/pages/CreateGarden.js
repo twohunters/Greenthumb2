@@ -11,12 +11,15 @@ const { Input, Field, Control, Label, Checkbox, } = Form;
 const {Brand, Burger, Menu, Container, Item, } = Navbar
 
 
-function CreateGarden() {
+const CreateGarden= () => {
+    const[ showSize, setShowSize] = useState(false)
+    const[ showPlans, setShowPlants] = useState(false)
+
     //Setting our component's itial state
     const [plants, setPlants] = useState([])
     const [formObject, setFormObject] = useState({})
 
-    useEffect(() =>{
+     useEffect(() =>{
         loadPlants()
     }, [])
 
@@ -25,7 +28,8 @@ function CreateGarden() {
     function loadPlants() {
         API.getPlants()
         .then(res =>
-            setPlants(res.data)
+            
+            {console.log(res); setPlants(res.data)}
             )
             .catch(err => console.log(err));
     };
@@ -50,22 +54,24 @@ function CreateGarden() {
 
 
 
-    const[ showSize, setShowSize] = useState(false)
-    const[ showPlans, setShowPlants] = useState(false)
+ 
+
     return(
     <div className ="container">
-        <Form>
+       <form>
             <Form.Label>Garden Name:</Form.Label>
             <Form.Input type= "text" name="gardenName"></Form.Input>
-        </Form>
+        </form> 
         <Navbar color = "primary">
             <Navbar.Container>
-                <Navbar.Item>
+                <Navbar.Item> 
+                    {/* //this button will show the size */}
                     <Button  onClick ={() => setShowSize(true)} color="primary">Size</Button>
+                     {/* //this button will show the plant */}
                     <Button onClick = { () => setShowPlants(true)} color ="primary">Plants</Button>
                 </Navbar.Item>
             </Navbar.Container>
-        </Navbar>
+        </Navbar> 
         <div className ="plantview">
             <Form.Field>
                 <Form.Control>
