@@ -4,7 +4,7 @@ create: function(req,res){
     db.User
     .create(req.body)
     .then(dbModel=>res.json(dbModel))
-    .catch(err=>res.status(500).json(err))
+    .catch(err=>console.log(err))
 },
 findById: function(req,res){
     db.User

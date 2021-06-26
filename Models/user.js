@@ -16,6 +16,9 @@ const userSchema = new Schema({
         type: String,
        required: true
     },
+    about:{
+        type:String
+    },
     Garden_id:{
         type:[GardenArray],
         default: undefined

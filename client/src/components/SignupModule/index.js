@@ -5,7 +5,10 @@ import {Button} from 'react-bulma-components';
 import {Form} from 'react-bulma-components';
 import API from "../../utils/API"
 import ReactFormInputValidation from "react-form-input-validation";
+import { useHistory } from "react-router-dom"
+
 const SignUpModal = props => {
+    const history = useHistory()
     const [formObject,setFormObject]= useState({})
     if (!props.show){
         return null
@@ -18,17 +21,21 @@ const SignUpModal = props => {
       };
     function handleFormSubmit(event) {
         event.preventDefault();
-        // if (formObject.FistName && formObject.LastName && formObject.Email && formObject.Password) {
+        //  if (formObject.FistName && formObject.LastName && formObject.Email && formObject.Password) {
           API.saveUser({
             firstName: formObject.FirstName,
             lastName: formObject.LastName,
-            email: formObject.email,
-            password:formObject.password,
-            about: formObject.about
+            email: formObject.Email,
+            password:formObject.Password,
+            about: formObject.About
           })
-          .then(res=>console.log(res))
+          .then(res=>{
+            const id = res.data._id ;
+          history.push('/UserFeed/'+ id)
+          props.onClose()
+          })
             .catch(err => console.log(err));
-        // }
+        //  }
       };
     return (
         <div className="modal">

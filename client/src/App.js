@@ -9,6 +9,7 @@ import GardenView from './pages/GardenView';
 import Plants from './pages/Plants';
 import SinglePlant from './pages/SinglePlant';
 import Home from './pages/Home';
+import UserFeed from './pages/UserFeed';
 import MenuContainer from './components/MenuContainer'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
 <Route exact path='/SinglePlant' component={SinglePlant}/>
 <Route exact path='/GardenView' component={GardenView}/>
 <Route exact path='/Plants' component={Plants}/>
+<Route exact path='/UserFeed/:id' component={UserFeed}/>
     </Switch>
     
     </Router>
