@@ -228,8 +228,47 @@ const plantSeed =  [{
     time_to_fruit: 40
 }
 ]
+const userSeed = [{
+    firstName:"Rayna",
+    lastName:"Weinreb",
+    email: "rayna@test.com",
+    password:"1234578",
+    Garden_id:"1bd"
+},
+{firstName:"Gunner",
+lastName:"Weinreb",
+email: "rayna2345@test.com",
+password:"1234578",
+Garden_id:"1b2"
+}
+]
+const gardenSeed = [{
+   title: "garden1",
+   user_id:"60d75c64d0c8264bc06604e",
+   plant_id: ["60d75cecd482224f08402300","60d75cecd482224f08402301"]
+}]
+db.User.deleteMany({})
+    .then(()=> db.User.collection.insertMany(userSeed))
+    .then((data) => {
+        console.log(data.result.n + ' records inserted!');
+        process.exit(0);
+      })
+      .catch((err) => {
+        console.error(err);
+        process.exit(1);
+      });
 db.Plant.deleteMany({})
   .then(() => db.Plant.collection.insertMany(plantSeed))
+  .then((data) => {
+    console.log(data.result.n + ' records inserted!');
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+  db.Garden.deleteMany({})
+  .then(() => db.Garden.collection.insertMany(gardenSeed))
   .then((data) => {
     console.log(data.result.n + ' records inserted!');
     process.exit(0);

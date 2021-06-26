@@ -9,7 +9,8 @@ import GardenView from './pages/GardenView';
 import Plants from './pages/Plants';
 import SinglePlant from './pages/SinglePlant';
 import Home from './pages/Home';
-
+import AllGardens from './pages/AllGardens'
+import AllUsers from './pages/AllUsers'
 function App() {
   return (
     <div>
@@ -25,6 +26,8 @@ function App() {
 <Route exact path='/SinglePlant' component={SinglePlant}/>
 <Route exact path='/GardenView' component={GardenView}/>
 <Route exact path='/Plants' component={Plants}/>
+<Route exact path='/AllUsers' component={Plants}/>
+<Route exact path='/AllGardens' component={Plants}/>
     </Switch> 
     
      </Router> 

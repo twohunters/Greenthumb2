@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const GardenArray = new Schema({name:String})
 const userSchema = new Schema({
     firstName:{
         type: String,
@@ -16,7 +17,8 @@ const userSchema = new Schema({
        required: true
     },
     Garden_id:{
-        type:String
+        type:[GardenArray],
+        default: undefined
     }
 
 })
