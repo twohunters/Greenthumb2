@@ -4,14 +4,17 @@ import './signUpModule.css'
 import {Button} from 'react-bulma-components';
 import {Form} from 'react-bulma-components';
 import API from "../../utils/API"
+import ReactFormInputValidation from "react-form-input-validation";
 const SignUpModal = props => {
     const [formObject,setFormObject]= useState({})
     if (!props.show){
         return null
     }
+
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({...formObject, [name]: value})
+            
       };
     function handleFormSubmit(event) {
         event.preventDefault();
@@ -57,15 +60,17 @@ const SignUpModal = props => {
                     
                     <Form.Input id='about' type='text' name='About'/>
                 </Form.Field>
-                </div>
+                <Form.Label className="error">
+               
+                </Form.Label>
                 
                 <div className="modal-footer">
                     <Button  onClick={handleFormSubmit}  className="button">Sign up</Button>
                     <Button onClick={props.onClose}  className="button ">Close</Button>
                 </div>
                 </div>
-            
-        </div>
+                </div>
+                </div>
         
     )
 }

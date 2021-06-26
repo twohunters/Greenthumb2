@@ -14,26 +14,26 @@ const LoginModule = props => {
         const { name, value } = event.target;
         setFormObject({...formObject, [name]: value})
       };
-    function handleFormSubmit(event) {
-        event.preventDefault();
-        if(formObject.Email && formObject.Password)
-        fetch('/api/users'{
-            method:'POST',
-            headers:{
-                'accept' : 'application/json','Content-Type':'application/json'
-            },
-            body:JSON.stringify({
-                email: formObject.email,
-                password: formObject.password
-            })
-            .then((res)=> res.json())
-            .then((result)=>{
-                console.log(result)
-                if(result.Status=="Invalid")
-                alert("User Not Found")
-                elsethis.props.history.push('/CreateGarden')
-            })
-        })
+    // function handleFormSubmit(event) {
+    //     event.preventDefault();
+    //     if(formObject.Email && formObject.Password)
+    //     fetch('/api/users'){
+    //         method:'POST',
+    //         headers:{
+    //             'accept' : 'application/json','Content-Type':'application/json'
+    //         },
+    //         body:JSON.stringify({
+    //             email: formObject.email,
+    //             password: formObject.password
+    //         })
+    //         .then((res)=> res.json())
+    //         .then((result)=>{
+    //             console.log(result)
+    //             if(result.Status=="Invalid")
+    //             alert("User Not Found")
+    //             elsethis.props.history.push('/CreateGarden')
+    //         })
+    //     })
     return (
         <div className="modal">
             <div className="modal-content">
@@ -53,7 +53,7 @@ const LoginModule = props => {
                 </Form.Field>
                 </div>
                 <div className="modal-footer">
-                    <Button onClick={handleFormSubmit} align='right' className="button">Log In</Button>
+                    {/* <Button onClick={handleFormSubmit} align='right' className="button">Log In</Button> */}
                     <Button onClick={props.onClose} align='right' className="button ">Close</Button>
                 </div>
             </div>
