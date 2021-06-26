@@ -1,3 +1,4 @@
+
 import axios from "axios";
 
 export default {
@@ -9,7 +10,7 @@ export default {
     //get all plants
     getPlants: function () {
         console.log("PING!!!")
-        return axios.get("/api/plants");
+        return axios.get("/api/plants/");
     },
     //get plant by id
     getPlant: function (id) {
