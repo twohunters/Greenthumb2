@@ -9,6 +9,7 @@ import GardenView from './pages/GardenView';
 import Plants from './pages/Plants';
 import SinglePlant from './pages/SinglePlant';
 import Home from './pages/Home';
+import MenuContainer from './components/MenuContainer'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Router>
      <Nav>
     </Nav>
+    <MenuContainer/>
     <Switch>
 <Route exact path='/' component={Home}/>
 <Route exact path='/CreateGarden' component={CreateGarden}/>

@@ -18,7 +18,7 @@ const SignUpModal = props => {
       };
     function handleFormSubmit(event) {
         event.preventDefault();
-        if (formObject.FistName && formObject.LastName && formObject.Email && formObject.Password) {
+        // if (formObject.FistName && formObject.LastName && formObject.Email && formObject.Password) {
           API.saveUser({
             firstName: formObject.FirstName,
             lastName: formObject.LastName,
@@ -28,7 +28,7 @@ const SignUpModal = props => {
           })
           .then(res=>console.log(res))
             .catch(err => console.log(err));
-        }
+        // }
       };
     return (
         <div className="modal">

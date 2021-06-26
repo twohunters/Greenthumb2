@@ -11,8 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
 
-app.use(routes);
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/greenthumb");
+app.use(require(routes));
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/greenthumb", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
 // Start the API server
 app.listen(PORT, function() {

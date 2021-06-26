@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "concurrently": "^6.2.0",
     "if-env": "^1.0.4",
+    "mongoose": "^5.12.15",
     "react": "^17.0.2",
     "react-axios": "^2.0.5",
     "react-bulma-components": "^4.0.7",
