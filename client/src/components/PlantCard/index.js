@@ -10,7 +10,7 @@ function PlantCard(props) {
             <Card>
                 <Card.Header>
                     <Card.Header.Title>
-                        {props.plantName}
+                    <i class="fas fa-seedling"></i> {props.plantName}
                     </Card.Header.Title>
                 </Card.Header>
                 <Card.Content>
