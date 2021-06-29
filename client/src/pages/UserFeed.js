@@ -13,7 +13,7 @@ const UserFeed = props => {
     return (
         <Content>
             <Heading>
-                Your Account
+            <i class="fas fa-user"></i>Your Account
             </Heading>
             <Heading subtitle>
                 {/* {props.firstName} {props.lastName} */}
