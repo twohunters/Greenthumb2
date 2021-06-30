@@ -25,10 +25,16 @@ update: function(req,res){
     .catch(err=>res.status(500).json(err))
 },
 remove: function(req,res){
-    db.Users
+    db.User
     .findById({_id:req.params.id})
     .then(dbModel => dbModel.remove())
     .then(dbModel=>res.json(dbModel))
     .catch(err=>res.status(500).json(err))
 },
+findOne : function(req,res){
+    db.User
+    .findOne(req.body)
+    .then(dbModel=>res.json(dbModel))
+    .catch(err=>res.status(500).json(err))
+}
 }

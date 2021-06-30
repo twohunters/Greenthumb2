@@ -59,5 +59,8 @@ export default {
     //save user to db
     saveUser: function(userData){
         return axios.post("/api/user", userData)
+    },
+    findUser: function(){
+        return axios.get("api/login")
     }
 };

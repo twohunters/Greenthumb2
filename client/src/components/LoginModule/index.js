@@ -4,36 +4,35 @@ import './LoginModule.css'
 import {Button} from 'react-bulma-components';
 import {Form} from 'react-bulma-components';
 import PropTypes from 'prop-types';
+import API from "../../utils/API";
+import { useHistory } from "react-router-dom"
+
+
 
 const LoginModule = props => {
     const [formObject,setFormObject]= useState({})
+    const history = useHistory()
     if (!props.show){
         return null
     }
+
+    
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({...formObject, [name]: value})
       };
-    // function handleFormSubmit(event) {
-    //     event.preventDefault();
-    //     if(formObject.Email && formObject.Password)
-    //     fetch('/api/users'){
-    //         method:'POST',
-    //         headers:{
-    //             'accept' : 'application/json','Content-Type':'application/json'
-    //         },
-    //         body:JSON.stringify({
-    //             email: formObject.email,
-    //             password: formObject.password
-    //         })
-    //         .then((res)=> res.json())
-    //         .then((result)=>{
-    //             console.log(result)
-    //             if(result.Status=="Invalid")
-    //             alert("User Not Found")
-    //             elsethis.props.history.push('/CreateGarden')
-    //         })
-    //     })
+      function handleFormSubmit(e){
+          e.preventDefault()
+          
+          API.findUser({
+              email: formObject.Email,
+              password:formObject.Password
+          })
+          .then(res=>{
+              console.log(res.data)
+              history.push('/UserFeed/')
+          })
+      }
     return (
         <div className="modal">
             <div className="modal-content">
@@ -45,7 +44,7 @@ const LoginModule = props => {
                     <Form.Label>
                         Email
                     </Form.Label>
-                    <Form.Input onChange={handleInputChange} type='text' name='Email'/>
+                    <Form.Input  onChange={handleInputChange} type='text' name='Email'/>
                     <Form.Label>
                         Password
                     </Form.Label>
@@ -53,7 +52,7 @@ const LoginModule = props => {
                 </Form.Field>
                 </div>
                 <div className="modal-footer">
-                    {/* <Button onClick={handleFormSubmit} align='right' className="button">Log In</Button> */}
+                    <Button onClick={handleFormSubmit} align='right' className="button">Log In</Button> 
                     <Button onClick={props.onClose} align='right' className="button ">Close</Button>
                 </div>
             </div>
@@ -61,7 +60,8 @@ const LoginModule = props => {
         
     )
 }
-LoginModule.propTypes = {
-    setToken: PropTypes.func.isRequired
-  }
+
+// LoginModule.propTypes = {
+//     setToken: PropTypes.func.isRequired
+//   }
 export default LoginModule
