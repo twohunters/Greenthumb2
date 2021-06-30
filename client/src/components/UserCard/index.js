@@ -10,7 +10,7 @@ function UserCard(props) {
             <Card>
                 <Card.Header>
                     <Card.Header.Title>
-                    <i class="fas fa-user"></i>{props.firstName} {props.lastName}
+                    <span class="material-icons">person</span> {props.firstName} {props.lastName}
                     </Card.Header.Title>
                 </Card.Header>
                 <Card.Content>
