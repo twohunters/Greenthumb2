@@ -22,8 +22,8 @@ function App() {
     <Switch>
 <Route exact path='/' component={Home}/>
 <Route exact path='/CreateGarden' component={CreateGarden}/>
-<Route exact path='/SinglePlant' component={SinglePlant}/>
-<Route exact path='/GardenView' component={GardenView}/>
+<Route exact path='/SinglePlant/:id' component={SinglePlant}/>
+<Route exact path='/GardenView/:id' component={GardenView}/>
 <Route exact path='/Plants' component={Plants}/>
 <Route exact path='/UserFeed/:id' component={UserFeed}/>
     </Switch>
