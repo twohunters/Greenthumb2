@@ -1,5 +1,6 @@
 import React from "react";
 import { Form } from "react-bulma-components";
+import { Button } from "react-bulma-components";
 import { useHistory } from "react-router-dom";
 import API from "../utils/API";
 
