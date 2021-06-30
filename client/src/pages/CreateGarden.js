@@ -48,15 +48,13 @@ const CreateGarden= () => {
 
     function handleFormSubmit(event){
         event.preventDefault();
+        console.log("clicked ")
         API.saveGarden({
             name: formObject.name,
             plants: [formObject.plants],
             size: formObject.size
         })
     }
-
-
-
 
 
 
