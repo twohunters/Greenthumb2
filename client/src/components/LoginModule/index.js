@@ -25,12 +25,12 @@ const LoginModule = props => {
           e.preventDefault()
           
           API.findUser({
-              email: formObject.Email,
+              email:formObject.Email,
               password:formObject.Password
           })
           .then(res=>{
-              const id = res.data._id
-              history.push('/UserFeed/'+id )
+              console.log(res)
+              history.push('/UserFeed/' )
           })
       }
     return (

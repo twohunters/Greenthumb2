@@ -60,7 +60,7 @@ export default {
     saveUser: function(userData){
         return axios.post("/api/user", userData)
     },
-    findUser: function(){
-        return axios.get("api/login")
+    findUser: function(loginData){
+        return axios.get("api/login",loginData)
     }
 };

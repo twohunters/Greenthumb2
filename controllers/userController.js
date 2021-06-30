@@ -33,7 +33,7 @@ remove: function(req,res){
 },
 findOne : function(req,res){
     db.User
-    .findOne(req.body)
+    .findOne({email:req.body.email, password:req.body.password})
     .then(dbModel=>res.json(dbModel))
     .catch(err=>res.status(500).json(err))
 }
