@@ -1,7 +1,5 @@
 import React,{useState, useEffect} from "react";
-import plants from './Plants'
-import size from './Size'
-import API from '../utils/API'
+import API from '../utils/API';
 import {Link} from "react-router-dom";
 import { Button} from 'react-bulma-components';
 import { Navbar } from 'react-bulma-components';
@@ -13,10 +11,10 @@ const {Brand, Burger, Menu, Container, Item, } = Navbar
 
 const CreateGarden= () => {
 
-    const [tocAgreed1, setTocAgreed1] = useState(false);
-    const [tocAgreed2, setTocAgreed2] = useState(false);
-    const [tocAgreed3, setTocAgreed3] = useState(false);
-    const [tocAgreed4, setTocAgreed4] = useState(false);
+    // const [tocAgreed1, setTocAgreed1] = useState(false);
+    // const [tocAgreed2, setTocAgreed2] = useState(false);
+    // const [tocAgreed3, setTocAgreed3] = useState(false);
+    // const [tocAgreed4, setTocAgreed4] = useState(false);
     const[ showSize, setShowSize] = useState(false)
     const[ showPlants, setShowPlants] = useState(false)
 
@@ -41,18 +39,24 @@ const CreateGarden= () => {
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    setFormObject({...formObject,  [name]: value})
   };
 
 
     function handleFormSubmit(event){
+      console.log("BUTTON CLICK")
         event.preventDefault();
         API.saveGarden({
-            name: formObject.name,
+            name: formObject.gardenName,
             plants: [formObject.plants],
             size: formObject.size
+
         })
+        console.log(formObject)
+        
     }
 
 
@@ -66,7 +70,11 @@ const CreateGarden= () => {
     <div className ="container">
        <form>
             <Form.Label>Garden name:</Form.Label>
-            <Form.Input type= "text" name="gardenName"></Form.Input>
+            <Form.Input 
+            onChange={handleInputChange}
+            type= "text" 
+            name="gardenName"
+            placeholder="Garden Name (required)"></Form.Input>
         </form> 
         <Navbar color = "primary">
             <Navbar.Container>
@@ -78,42 +86,46 @@ const CreateGarden= () => {
                 </Navbar.Item>
             </Navbar.Container>
         </Navbar> 
-        <div classname ="sizeView">
+        <div className ="sizeView">
         <Form.Field>
         <Form.Control>
             <h1>Please select one size.</h1>
           <Form.Checkbox
-            checked={tocAgreed1}
-            onChange={(e) => {
-              return setTocAgreed1(e.target.checked);
-            }}
+          onChange={handleInputChange}
+          name="size"
+          value="Individual"
+          type= "checkbox"
           >
             {'  '}Individual (100 square feet)
           </Form.Checkbox>
           <br></br>
           <Form.Checkbox
-            checked={tocAgreed2}
-            onChange={(e) => {
-              return setTocAgreed2(e.target.checked);
-            }}
+          onChange={handleInputChange}
+          name="size"
+          value="Couple"
+          type= "checkbox"
+            // // checked={tocAgreed2}
+            // onChange={(e) => {
+            //   return setTocAgreed2(e.target.checked);
+            // }}
           >
             {'  '}Couple (200 square feet)
           </Form.Checkbox>
           <br></br>
           <Form.Checkbox
-            checked={tocAgreed3}
-            onChange={(e) => {
-              return setTocAgreed3(e.target.checked);
-            }}
+          onChange={handleInputChange}
+          name="size"
+          value="Average Family"
+          type= "checkbox"
           >
             {'  '}Average Family (300-500 square feet)
           </Form.Checkbox>
           <br></br>
           <Form.Checkbox
-            checked={tocAgreed4}
-            onChange={(e) => {
-              return setTocAgreed4(e.target.checked);
-            }}
+          onChange={handleInputChange}
+          name="size"
+          value="Large Family"
+          type= "checkbox"
           >
             {'  '}Large Family(5+) (600-800 square feet)
           </Form.Checkbox>
@@ -126,16 +138,20 @@ const CreateGarden= () => {
                 <Form.Control>
                 {plants.map(plant => (
                     <Form.Checkbox
+                     type= "checkbox"
                     showPlants = {false}
                     style={{margin: "4px"}}
                     onChange={handleInputChange}
-                    name={plant.name}
-                    key={plant.id}>
+                    name="plants"
+                    key={plant.id}
+                    value={plant.name}>
+
                         {plant.name}
+
                     </Form.Checkbox>
                 ))}
 
-                    <Button onclick = {handleFormSubmit}>Create </Button>
+                    <Button onClick = {handleFormSubmit} >Create  </Button>
                 </Form.Control>
             </Form.Field>
           
