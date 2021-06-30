@@ -1,20 +1,23 @@
 import React from "react";
+import "./style.css";
 import { Card } from "react-bulma-components";
 
 const { Header, Title, Content } = Card;
 
 function UserCard(props) {
     return (
-        <Card>
-            <Card.Header>
-                <Card.Header.Title>
-                {props.firstName} {props.lastName}
-                </Card.Header.Title>
-            </Card.Header>
-            <Card.Content>
-                {props.userGardens}
-            </Card.Content>
-        </Card>
+        <Container>
+            <Card>
+                <Card.Header>
+                    <Card.Header.Title>
+                    <i class="fas fa-user"></i>{props.firstName} {props.lastName}
+                    </Card.Header.Title>
+                </Card.Header>
+                <Card.Content>
+                    {props.userGardens}
+                </Card.Content>
+            </Card>
+        </Container>
     )
 }
 

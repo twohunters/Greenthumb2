@@ -12,8 +12,13 @@ const {Brand, Burger, Menu, Container, Item, } = Navbar
 
 
 const CreateGarden= () => {
+
+    const [tocAgreed1, setTocAgreed1] = useState(false);
+    const [tocAgreed2, setTocAgreed2] = useState(false);
+    const [tocAgreed3, setTocAgreed3] = useState(false);
+    const [tocAgreed4, setTocAgreed4] = useState(false);
     const[ showSize, setShowSize] = useState(false)
-    const[ showPlans, setShowPlants] = useState(false)
+    const[ showPlants, setShowPlants] = useState(false)
 
     //Setting our component's itial state
     const [plants, setPlants] = useState([])
@@ -45,7 +50,8 @@ const CreateGarden= () => {
         event.preventDefault();
         API.saveGarden({
             name: formObject.name,
-            plants: [formObject.plants]
+            plants: [formObject.plants],
+            size: formObject.size
         })
     }
 
@@ -59,7 +65,7 @@ const CreateGarden= () => {
     return(
     <div className ="container">
        <form>
-            <Form.Label>Garden Name:</Form.Label>
+            <Form.Label>Garden name:</Form.Label>
             <Form.Input type= "text" name="gardenName"></Form.Input>
         </form> 
         <Navbar color = "primary">
@@ -72,17 +78,64 @@ const CreateGarden= () => {
                 </Navbar.Item>
             </Navbar.Container>
         </Navbar> 
+        <div classname ="sizeView">
+        <Form.Field>
+        <Form.Control>
+            <h1>Please select one size.</h1>
+          <Form.Checkbox
+            checked={tocAgreed1}
+            onChange={(e) => {
+              return setTocAgreed1(e.target.checked);
+            }}
+          >
+            {'  '}Individual (100 square feet)
+          </Form.Checkbox>
+          <br></br>
+          <Form.Checkbox
+            checked={tocAgreed2}
+            onChange={(e) => {
+              return setTocAgreed2(e.target.checked);
+            }}
+          >
+            {'  '}Couple (200 square feet)
+          </Form.Checkbox>
+          <br></br>
+          <Form.Checkbox
+            checked={tocAgreed3}
+            onChange={(e) => {
+              return setTocAgreed3(e.target.checked);
+            }}
+          >
+            {'  '}Average Family (300-500 square feet)
+          </Form.Checkbox>
+          <br></br>
+          <Form.Checkbox
+            checked={tocAgreed4}
+            onChange={(e) => {
+              return setTocAgreed4(e.target.checked);
+            }}
+          >
+            {'  '}Large Family(5+) (600-800 square feet)
+          </Form.Checkbox>
+          <br></br>
+        </Form.Control>
+      </Form.Field>
+      </div>
         <div className ="plantview">
-            <Form.Field>
+            <Form.Field >
                 <Form.Control>
                 {plants.map(plant => (
                     <Form.Checkbox
+                    showPlants = {false}
+                    style={{margin: "4px"}}
                     onChange={handleInputChange}
                     name={plant.name}
                     key={plant.id}>
                         {plant.name}
                     </Form.Checkbox>
                 ))}
+
+                    <Button onclick = {handleFormSubmit}>Create </Button>
                 </Form.Control>
             </Form.Field>
           

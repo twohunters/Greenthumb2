@@ -1,20 +1,23 @@
 import React from "react";
+import "./style.css";
 import { Card } from "react-bulma-components";
 
 const { Header, Title, Content } = Card;
 
 function PlantCard(props) {
     return (
-        <Card>
-            <Card.Header>
-                <Card.Header.Title>
-                    {props.plantName}
-                </Card.Header.Title>
-            </Card.Header>
-            <Card.Content>
-                {props.plantDescription}
-            </Card.Content>
-        </Card>
+        <Container>
+            <Card>
+                <Card.Header>
+                    <Card.Header.Title>
+                    <i class="fas fa-seedling"></i> {props.plantName}
+                    </Card.Header.Title>
+                </Card.Header>
+                <Card.Content>
+                    {props.plantDescription}
+                </Card.Content>
+            </Card>
+        </Container>
     )
 }
 

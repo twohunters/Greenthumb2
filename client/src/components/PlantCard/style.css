@@ -1,0 +1,19 @@
+Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+Card {
+    padding: 20px;
+}
+
+Header {
+    margin: 20px;
+    align-items: left;
+}
+
+Content {
+    margin: 20px;
+    align-items: left;
+}
