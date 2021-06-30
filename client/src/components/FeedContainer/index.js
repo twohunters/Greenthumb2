@@ -12,7 +12,9 @@ const FeedContainer = props => {
     function getUsers(){
         API.getAllUsers()
     
-         .then(res =>setUsers(res.data)
+         .then(res => {
+             console.log(res); setUsers(res.data)
+            }
             ).catch(err=> console.log(err))
 
     }
