@@ -1,34 +1,37 @@
 //slide 14
-import React,{useState, useEffect}  from "react";
+import React, { useState, useEffect } from "react";
 import API from '../utils/API'
 import { Link, useParams } from "react-router-dom";
+import './SinglePlant.css'
 //link to this page is api/plants/{id}
 function SinglePlant(props) {
     const [plant, setPlant] = useState([])
 
-    const {id} = useParams()
+    const { id } = useParams()
     useEffect(() => {
-      API.getPlant(id)
-        .then(res => 
-            {console.log(res); console.log(id); setPlant(res.data)})
-        .catch(err => console.log(err));
+        API.getPlant(id)
+            .then(res => { console.log(res); setPlant(res.data) })
+            .catch(err => console.log(err));
     })
-    
-    return (
-<container className="plantContainer">
-        <h1>{plant.name}</h1> 
-        <img alt="plant" src={plant.img}/>
-        <h2>Description : {plant.description}</h2>
-        <h2>Habit : {plant.plant_habit}</h2>
-        <h2>Life Cyle : {plant.life_cycle}</h2>
-        <h2>Sun Requirements : {plant.sun_req}</h2>
-        <h2>Water Requirements : {plant.water_req}</h2>
-        <h2>Uses : {plant.uses}</h2>
-        <h2>Edible Parts: {plant.edible_parts}</h2>
-        <h2>Time To Fruit : {plant.time_to_fruit}</h2>
-      
 
-</container>
+    return (
+        <container className="plantContainer">
+            <ul>
+                <h1>{plant.name}</h1>
+                <br></br>
+                {/* <img alt="plant" src={plant.img} /> */}
+
+                <li><div className="listTitle">Description </div>{plant.description}</li>
+                <li><div className="listTitle">Habit </div>{plant.plant_habit}</li>
+                <li><div className="listTitle">Life Cyle </div>{plant.life_cycle}</li>
+                <li><div className="listTitle">Sun Requirements </div>{plant.sun_req}</li>
+                <li><div className="listTitle">Water Requirements </div>{plant.water_req}</li>
+                <li><div className="listTitle">Uses </div>{plant.uses}</li>
+                <li><div className="listTitle">Edible Part </div>{plant.edible_parts}</li>
+                <li><div className="listTitle">Time To Fruit </div>{plant.time_to_fruit} days</li>
+            </ul>
+
+        </container>
     )
 }
 
