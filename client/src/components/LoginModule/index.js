@@ -29,8 +29,8 @@ const LoginModule = props => {
               password:formObject.Password
           })
           .then(res=>{
-              console.log(res)
-              history.push('/UserFeed/' )
+              const id = res.data._id
+              history.push('/UserFeed/' +id)
           })
       }
     return (

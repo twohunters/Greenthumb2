@@ -65,7 +65,7 @@ const SignUpModal = props => {
                         About You
                         </Form.Label>
                     
-                    <Form.Input id='about' type='text' name='About'/>
+                    <Form.Input onChange={handleInputChange}  id='about' type='text' name='About'/>
                 </Form.Field>
                 <Form.Label className="error">
                

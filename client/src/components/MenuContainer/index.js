@@ -16,7 +16,7 @@ function MenuContainer() {
   
   <a href="/plants" >View All Plants</a>
   {/* <Route path="/CreateGarden" exact component={GardenView}/> */}
-  <a href="/" >View All Gardens</a>
+  <a href="/gardenlistview" >View All Gardens</a>
   <a href="viewallusers" >View All Users</a>
   <a href="addplant" >Add to Our Plant DB</a>
   <a href="#"  onClick={()=> setShowfaq(true)} >FAQs</a>

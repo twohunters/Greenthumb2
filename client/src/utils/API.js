@@ -61,6 +61,7 @@ export default {
         return axios.post("/api/user", userData)
     },
     findUser: function(loginData){
-        return axios.get("api/login",loginData)
+        console.log(loginData)
+        return axios.post("api/login",loginData)
     }
 };

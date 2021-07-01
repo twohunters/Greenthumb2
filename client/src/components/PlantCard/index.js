@@ -6,7 +6,7 @@ const { Header, Title, Content } = Card;
 
 function PlantCard(props) {
     return (
-        <Container>
+        <div>
             <Card>
                 <Card.Header>
                     <Card.Header.Title>
@@ -17,7 +17,7 @@ function PlantCard(props) {
                     {props.plantDescription}
                 </Card.Content>
             </Card>
-        </Container>
+        </div>
     )
 }
 

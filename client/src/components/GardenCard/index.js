@@ -1,27 +1,45 @@
 //slide 10
-import React from "react";
+import React,{useState,useEffect} from "react";
 import {Card} from "react-bulma-components";
+import API from '../../utils/API'
 const { Header, Title, Content } = Card;
 
-function GardenCard(props){
-   // This array will be filled with the data of the user's garden name
-   // Userdata = get(userInfo)
-  //  userGardenArray = ['userData.garden1', 'userData.garden2',...]
-// maybe set state here to change the plants on line 20??
-//for (i=0; i< userGardenArray.length; i++)
-//return html?
+
+const GardenCard = props => {
+    const [gardens,setGardens]=useState([])
+    useEffect(()=>{
+        getGardens()
+    },[])
+
+    function getGardens(){
+        API.getGardens()
+    
+         .then(res => {
+             console.log(res); setGardens(res.data)
+            }
+            ).catch(err=> console.log(err))
+
+    }
     return(
-        <Card>
+        <div> {gardens.length ?(
+            <Content>
+            {gardens.map(garden=>(
+                <div>
             <Card.Header>
                 <Card.Header.Title>
-                    {props.gardenName}
+                    {garden.title}
                 </Card.Header.Title>
             </Card.Header>
             <Card.Content>
-                {props.gardenPlants}
+                {garden.gardenPlants}
                 {/* do we want a list of plants or maybe the date created */}
             </Card.Content>
-        </Card>
+            </div>
+            ))}
+ </Content>
+        ):(<h3>No results to display</h3>)}
+       </div>
+    
     )
 }
 
