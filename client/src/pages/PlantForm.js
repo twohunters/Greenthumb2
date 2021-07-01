@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Form } from "react-bulma-components";
 import { Button } from "react-bulma-components";
 import { useHistory } from "react-router-dom";
@@ -6,7 +6,7 @@ import API from "../utils/API";
 
 const { Input, Field, Control, Label } = Form;
 
-const PlantForm = props => {
+const PlantForm = (props)=> {
     const history = useHistory();
     const [formObject, setFormObject] = useState({});
 
@@ -46,7 +46,7 @@ const PlantForm = props => {
             <Form>
                 <Form.Field>
                     <Form.Label>Plant Name</Form.Label>
-                    <Form.Input onChange={handleInputChange} id="plantName" type="text" name="plantName"></Form.Input>
+                    <Form.Input onChange={handleInputChange} id="plantName" type="text" name="plantName" placeholder="Plant Name"></Form.Input>
                 </Form.Field>
                 <Form.Field>
                     <Form.Label>Description</Form.Label>
