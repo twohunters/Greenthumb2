@@ -11,6 +11,8 @@ import SinglePlant from './pages/SinglePlant';
 import Home from './pages/Home';
 import UserFeed from './pages/UserFeed';
 import MenuContainer from './components/MenuContainer'
+import PlantForm from './pages/PlantForm';
+import TestPlantForm from './pages/TestPlantForm';
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
 <Route exact path='/GardenView/:id' component={GardenView}/>
 <Route exact path='/Plants' component={Plants}/>
 <Route exact path='/UserFeed/:id' component={UserFeed}/>
+<Route exact path='/PlantForm' component={TestPlantForm}/>
     </Switch>
     
     </Router>
