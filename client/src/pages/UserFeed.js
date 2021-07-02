@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { Content } from "react-bulma-components";
 import { Heading } from "react-bulma-components";
 import { Box } from "react-bulma-components";
@@ -7,9 +7,18 @@ import queryString from 'query-string'
 // import user data from user database
 
 const UserFeed = props => {
-   const values = queryString.parse(window.location.search)
-   console.log(values)
+    const [user,setUser]=useState([])
+useEffect(()=>{
+    getUser()
+},[])
+function getUser(){
     API.getUser()
+    .then(res => {
+        console.log(res); setUser(res.data)
+       }
+       ).catch(err=> console.log(err))
+}
+
     return (
         <Content>
             <Heading>

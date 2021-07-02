@@ -1,5 +1,6 @@
 const db = require("../models");
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const { User } = require("../models");
 module.exports = {
 create: function(req,res){
     const pass = bcrypt.hashSync(req.body.password,8)
@@ -39,34 +40,32 @@ remove: function(req,res){
     .catch(err=>res.status(500).json(err))
 },
 findOne: function(req,res){
-    console.log(req.body)
+   
     db.User
     .findOne({email:req.body.email})
     .then((dbModel) =>{
-        console.log(dbModel)
+        console.log(req.body.password)
+
+        const pass = dbModel.password
+        bcrypt.compare(req.body.password,pass,function (error,user){
+            if(error){
+                console.log("Server Error")
+                res.status(500).send("Server Error")
+            } if(user){
+                console.log('userfound')
+                req.session.save(()=>{
+                    res.json({
+                        email: dbModel.email,
+                        id: dbModel._id
+                    })
+                }
+                )
+            }else if (!user) {
+                console.log("User not found")
+            }
+        })
     })
+
+    .catch(err=>res.status(500).json(err))
 }
 }
-//         const pass = dbModel.password
-//         bcrypt.compare(req.body.password,pass,function(login,error){
-//             if(error){
-//                 console.log("Server Error")
-//                 res.status(500).send("Server Error")
-//             } if(login){
-//                 req.session.save(()=>{
-//                     res.json({
-//                         email: dbModel.email,
-//                         id: dbModel._id
-//                     })
-//                 }
-//                 )
-//             }else if (!login) {
-//                 res.send(alert("User not found"))
-//             }
-//         })
-
-
-//     .catch(err=>res.status(500).json(err))
-// }
-//     )}
-// }

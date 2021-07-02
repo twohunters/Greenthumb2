@@ -17,11 +17,11 @@ store.on('error', function(error){
 // Define middleware here
 app.use(require('express-session')({
   secret:"Secret express",
-  cookie:{
-    maxAge:1000 * 60 * 60 * 24 * 7
-  },
+  // cookie:{
+  //   maxAge:1000 * 60 * 60 * 24 * 7
+  // },
   store:store,
-  resave: false,
+  resave: true,
   saveUninitialized: true
 }))
 app.use(express.urlencoded({ extended: true }));
