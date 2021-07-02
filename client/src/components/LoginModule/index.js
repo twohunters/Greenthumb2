@@ -1,17 +1,20 @@
 //slide 4
-import React,{useState} from "react";
+import React,{useState, useContext} from "react";
 import './LoginModule.css'
 import {Button} from 'react-bulma-components';
 import {Form} from 'react-bulma-components';
 import PropTypes from 'prop-types';
 import API from "../../utils/API";
 import { useHistory } from "react-router-dom"
-
+import Global from '../../utils/Global'
 
 
 const LoginModule = props => {
     const [formObject,setFormObject]= useState({})
+    const user = useContext(Global)
     const history = useHistory()
+    const id = useContext(Global)
+    console.log(id)
     if (!props.show){
         return null
     }
@@ -29,8 +32,15 @@ const LoginModule = props => {
               password:formObject.Password
           })
           .then(res=>{
-              const id = res.data._id
-              history.push('/UserFeed/' +id)
+              console.log(res)
+            //   const id = res.data._id
+            if(res.data.isLoggedin){
+                user.onUpdate(res.data)
+
+            }
+            props.onClose()
+            history.push('/UserFeed')
+      
           })
       }
     return (

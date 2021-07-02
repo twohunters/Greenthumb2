@@ -1,15 +1,17 @@
 //slide 3
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect, useContext} from "react";
 import './signUpModule.css'
 import {Button} from 'react-bulma-components';
 import {Form} from 'react-bulma-components';
 import API from "../../utils/API"
 import ReactFormInputValidation from "react-form-input-validation";
 import { useHistory } from "react-router-dom"
+import Global from '../../utils/Global'
 
 const SignUpModal = props => {
     const history = useHistory()
     const [formObject,setFormObject]= useState({})
+    const user = useContext(Global)
     if (!props.show){
         return null
     }
@@ -31,8 +33,13 @@ const SignUpModal = props => {
           })
           .then(res=>{
             const id = res.data._id ;
-          history.push('/UserFeed/'+ id)
-          props.onClose()
+            if(res.data.isLoggedin){
+                user.onUpdate(res.data)
+
+            }
+        
+            history.push('/UserFeed/'+ id)
+            props.onClose()
           })
             .catch(err => console.log(err));
         //  }
