@@ -2,10 +2,13 @@ import React, {useState, useEffect} from "react";
 import "./style.css";
 import { Card } from "react-bulma-components";
 import API from '../../utils/API'
+import { useHistory } from "react-router-dom"
+
 
 const { Header, Title, Content } = Card;
 
 const PlantCard = props => {
+    const history = useHistory()
     const [plants,setPlants]=useState([])
     useEffect(()=>{
         getPlants()
@@ -26,7 +29,7 @@ const PlantCard = props => {
                     {plants.map(plant=>(
                         <Card>
                 <Card.Header>
-                    <Card.Header.Title>
+                    <Card.Header.Title onClick={()=> history.push('/Singleplant/'+plant._id)} >
                     <span class="material-icons">yard</span> {plant.name}
                     </Card.Header.Title>
                 </Card.Header>

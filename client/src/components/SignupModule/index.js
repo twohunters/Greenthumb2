@@ -33,10 +33,7 @@ const SignUpModal = props => {
           })
           .then(res=>{
             const id = res.data._id ;
-            if(res.data.isLoggedin=== true){
-                user.onUpdate(res.data)
-
-            }
+            localStorage.setItem('id',res.data._id)
         
             history.push('/UserFeed/'+ id)
             props.onClose()
