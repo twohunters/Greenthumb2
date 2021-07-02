@@ -1,38 +1,39 @@
 import React, { useState, useEffect } from "react";
+import API from '../utils/API';
+import { Link } from "react-router-dom";
+import { Button } from 'react-bulma-components';
 import { Form } from "react-bulma-components";
-import { Button } from "react-bulma-components";
+import './PlantForm.css'
 
-import API from "../../utils/API";
+const { Input, Field, Control, Label, Checkbox, } = Form;
 
-const { Input, Field, Control, Label } = Form;
-
-const PlantForm = (props) => {
-
+const TestPlantForm = () => {
+    // Setting the names and setting the values to empty
     const [formObject, setFormObject] = useState({
-        name: "",
-        description: "",
-        plant_habit: "",
-        life_cylce: "",
-        sun_req: "",
-        water_req: "",
-        uses: "",
-        edible_parts: "",
+        plantName: '',
+        description: '',
+        plant_habit: '',
+        life_cylce: '',
+        sun_req: '',
+        water_req: '',
+        uses: '',
+        edible_parts: '',
         time_to_fruit: 0
     })
-
+    // Handles updating component state when the user types into the input field
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({ ...formObject, [name]: value })
-    };
-
+    }
+    // Saving the plant to the DB
     function handleFormSubmit(event) {
         event.preventDefault();
-        if (formObject.name) {
+        if (formObject.plantName) {
             API.savePlants({
-                name: formObject.name,
+                plantName: formObject.plantName,
                 description: formObject.description,
                 plant_habit: formObject.plant_habit,
-                life_cycle: formObject.life_cycle,
+                life_cylce: formObject.life_cylce,
                 sun_req: formObject.sun_req,
                 water_req: formObject.water_req,
                 uses: formObject.uses,
@@ -41,8 +42,7 @@ const PlantForm = (props) => {
             })
             console.log(formObject)
         }
-    };
-
+    }
     return (
         <div className="container">
             <form>
@@ -132,9 +132,7 @@ const PlantForm = (props) => {
                 </div>
             </form>
         </div>
-    );
+    )
 }
 
-export default PlantForm;
-
-// SLIDE 16
+export default TestPlantForm;
