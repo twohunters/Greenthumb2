@@ -1,6 +1,6 @@
 const db = require("../models");
 const bcrypt = require('bcrypt');
-const { User } = require("../models");
+
 module.exports = {
 create: function(req,res){
     const pass = bcrypt.hashSync(req.body.password,8)
@@ -63,11 +63,11 @@ findOne: function(req,res){
             } if(user){
                 console.log('user found')
                 req.session.save(()=>{
-                    req.sessionisLoggedIn = true 
+                    
                     res.json({
                         email: dbModel.email,
                         id: dbModel._id,
-                        isLoggedIn: req.session.isLoggedIn
+                        isLoggedIn: true
                     })
                 }
                 )
