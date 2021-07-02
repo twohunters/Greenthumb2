@@ -5,22 +5,23 @@ import "./UserFeed.css";
 
 const UserFeed = () => {
     const [user, setUser] = useState({
-        _id:'',
+                _id:'',
         firstName:'',
         lastName:'',
         email:'',
         password: '',
         about: '',
+        Garden_id: []
     })
     const { id } = useParams()
     useEffect(() => {
+        console.log(id)
         API.getUser(id)
         .then(res =>  setUser(res.data))
-        .then(()=> console.log(user))
         .catch(err => console.log(err));
-    },)
+    },[])
     return (
-        <h1>{user.firstName}</h1> 
+        <h1>test {user.firstName} </h1> 
         // <div className="container">
         //     <Content>
         //         <Box className="section">
@@ -47,3 +48,12 @@ const UserFeed = () => {
 export default UserFeed;
 
 // SLIDE 12 & 13
+
+
+        // _id:'',
+        // firstName:'',
+        // lastName:'',
+        // email:'',
+        // password: '',
+        // about: '',
+        // Garden_id: []

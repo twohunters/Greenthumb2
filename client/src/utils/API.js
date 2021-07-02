@@ -50,11 +50,11 @@ export default {
     },
     //get user by id
     getUser: function(id){
-        return axios.get("api/user/" + id);
+        return axios.get("/api/user/" + id);
     },
     //delete user by id
     deleteUser: function(id){
-        return axios.delete("api/user/" + id);
+        return axios.delete("/api/user/" + id);
     },
     //save user to db
     saveUser: function(userData){
