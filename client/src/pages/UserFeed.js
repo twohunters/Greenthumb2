@@ -8,7 +8,9 @@ const UserFeed = () => {
         _id:'',
         firstName:'',
         lastName:'',
-        email
+        email:'',
+        password: '',
+        about: '',
     })
     const { id } = useParams()
     useEffect(() => {
@@ -18,7 +20,7 @@ const UserFeed = () => {
         .catch(err => console.log(err));
     },)
     return (
-        <h1>TEST</h1> 
+        <h1>{user.firstName}</h1> 
         // <div className="container">
         //     <Content>
         //         <Box className="section">
