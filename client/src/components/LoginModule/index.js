@@ -32,14 +32,16 @@ const LoginModule = props => {
               password:formObject.Password
           })
           .then(res=>{
-              console.log(res)
-            //   const id = res.data._id
-            if(res.data.isLoggedin){
-                user.onUpdate(res.data)
-
-            }
             props.onClose()
-            history.push('/UserFeed')
+            const id = res.data.id
+            history.push('/UserFeed/'+ id)
+              console.log(res.data.id)
+            //   const id = res.data._id
+            // if(res.data.isLoggedin){
+            //     user.onUpdate(res.data)
+
+            // }
+
       
           })
       }
