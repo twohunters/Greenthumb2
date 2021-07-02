@@ -33,7 +33,7 @@ const SignUpModal = props => {
           })
           .then(res=>{
             const id = res.data._id ;
-            if(res.data.isLoggedin){
+            if(res.data.isLoggedin=== true){
                 user.onUpdate(res.data)
 
             }

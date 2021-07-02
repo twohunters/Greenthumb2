@@ -63,7 +63,6 @@ findOne: function(req,res){
             } if(user){
                 console.log('user found')
                 req.session.save(()=>{
-                    
                     res.json({
                         email: dbModel.email,
                         id: dbModel._id,
