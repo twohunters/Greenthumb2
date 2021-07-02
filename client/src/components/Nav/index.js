@@ -14,7 +14,7 @@ function Nav() {
         <div>
             <Navbar color="primary">
                 <Navbar.Container>
-                    <Navbar.Item>
+                    <Navbar.Item href ='/'>
                         Green Thumb
                     </Navbar.Item>
                 </Navbar.Container>

@@ -10,9 +10,11 @@ const { Input, Field, Control, Label, Checkbox, } = Form;
 
 
 const CreateGarden = () => {
-  //Setting our component's itial state
+  //Setting our plant component's itial state to an empty array
   const [plants, setPlants] = useState([])
+  //setting our formObject component with the name's and empty values we expect to have in the object
   const [formObject, setFormObject] = useState({ plants: [], size: '', gardenName: '' })
+  //setting our userplant component inital state to an empty array
   const [userPlants, setUserPlants] = useState([])
   useEffect(() => {
     loadPlants()
@@ -63,7 +65,7 @@ const CreateGarden = () => {
 
   };
 
-
+// This function will post our data to our DB
   function handleFormSubmit(event) {
     console.log("BUTTON CLICK")
     event.preventDefault();

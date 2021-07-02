@@ -4,9 +4,10 @@ import API from '../utils/API'
 import { Link, useParams } from "react-router-dom";
 import './SinglePlant.css'
 //link to this page is api/plants/{id}
-function SinglePlant(props) {
+const SinglePlant= () => {
+    //setting component initial state
     const [plant, setPlant] = useState([])
-
+    //getting the id from the useParams function
     const { id } = useParams()
     useEffect(() => {
         API.getPlant(id)

@@ -11,7 +11,16 @@ create: function(req,res){
         password: pass,
         about: req.body.about
     })
-    .then(dbModel=>res.json(dbModel))
+    .then(dbModel=>req.session.save(()=>{
+        req.sessionisLoggedIn = true 
+        res.json({
+            email: dbModel.email,
+            id: dbModel._id,
+            isLoggedIn: req.session.isLoggedIn
+        })
+    })
+    )
+    
     .catch(err=>console.log(err))
 },
 findById: function(req,res){
@@ -52,11 +61,13 @@ findOne: function(req,res){
                 console.log("Server Error")
                 res.status(500).send("Server Error")
             } if(user){
-                console.log('userfound')
+                console.log('user found')
                 req.session.save(()=>{
+                    req.sessionisLoggedIn = true 
                     res.json({
                         email: dbModel.email,
-                        id: dbModel._id
+                        id: dbModel._id,
+                        isLoggedIn: req.session.isLoggedIn
                     })
                 }
                 )

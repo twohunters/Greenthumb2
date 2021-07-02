@@ -14,7 +14,7 @@ function MenuContainer() {
 <div class ="sidenav">
   <a href="/creategarden" >Create a Garden</a>
   
-  <a href="/plants" >View All Plants</a>
+  <a href="/allplants" >View All Plants</a>
   {/* <Route path="/CreateGarden" exact component={GardenView}/> */}
   <a href="/gardenlistview" >View All Gardens</a>
   <a href="viewallusers" >View All Users</a>

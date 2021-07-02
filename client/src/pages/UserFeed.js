@@ -3,16 +3,20 @@ import { Content } from "react-bulma-components";
 import { Heading } from "react-bulma-components";
 import { Box } from "react-bulma-components";
 import API from "../utils/API"
-import queryString from 'query-string'
+import { useParams } from "react-router-dom";
 // import user data from user database
 
 const UserFeed = props => {
+    
     const [user,setUser]=useState([])
+    const{id} = useParams()
 useEffect(()=>{
     getUser()
 },[])
-function getUser(){
-    API.getUser()
+
+function getUser(req){
+    
+    API.getUser(id)
     .then(res => {
         console.log(res); setUser(res.data)
        }
@@ -25,15 +29,15 @@ function getUser(){
             <span class="material-icons">person</span> Your Account
             </Heading>
             <Heading subtitle>
-                {/* {props.firstName} {props.lastName} */}
+                {user.firstName}
             </Heading>
             <Box>
                 <h3>About You</h3>
-                {/* <p>{props.userDescription}</p> */}
+                {user.about}
             </Box>
             <Box>
                 <h3>Your Gardens</h3>
-                {/* <div>{props.userGardens}</div> */}
+                {user.garden}
             </Box>
         </Content>
     )

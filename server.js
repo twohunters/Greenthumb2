@@ -11,16 +11,16 @@ var store = new MongoDBStore({
   collection:'sessions'
 })
 const PORT = process.env.PORT || 3001;
-store.on('error', function(error){
-  console.log(error)
-})
+// store.on('error', function(error){
+//   console.log(error)
+// })
 // Define middleware here
-app.use(require('express-session')({
+app.use(session({
   secret:"Secret express",
   // cookie:{
   //   maxAge:1000 * 60 * 60 * 24 * 7
   // },
-  store:store,
+  store: store,
   resave: true,
   saveUninitialized: true
 }))

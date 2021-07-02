@@ -1,33 +1,43 @@
 //slide 15
 import React, { useState, useEffect } from "react";
-
 import API from '../utils/API';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { Button } from 'react-bulma-components';
 
 
 
-function GardenView(props) {
-    const [garden, setGarden] = useState([])
-
+const GardenView =() => {
+    //setting the inital state of out garden to an empty object
+    const [garden, setGarden] = useState({})
+    const [userPlants, setUserPlants] = useState([])
     const { id } = useParams()
-    useEffect(() => {
-        API.getGarden(id)
-            .then(res => { console.log(garden); setGarden(res.data) })
 
+    useEffect(() => {
+        loadGarden()
+    },)
+
+    function loadGarden(){
+        API.getGarden(id)
+            .then(res => { 
+                setGarden(res.data); 
+                console.log(garden);
+                setUserPlants(res.data.plants);
+                console.log(userPlants)
+            })
             .catch(err => console.log(err));
-    });
+    };
 
 
     return (
-        <div>
-            <h1>Plants in your gardeb</h1>
-            <p>
-                {garden.map((plants) => garden.plants.map(plant =>
-                    <li>
-                        {garden.plants.plant}
-                    </li>
-                ))}
-            </p>
+        <div className ="gardenContainer">
+            <h1>{garden.title}</h1>
+            <div className="boxContainer">
+                {userPlants.map(plant =>
+                <div className="box">
+                    <h2>{plant.name}</h2>
+                </div>
+                )}
+            </div>
         </div>
     )
 }
