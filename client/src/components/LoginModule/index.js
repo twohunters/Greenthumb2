@@ -39,7 +39,7 @@ const LoginModule = props => {
 
             }
             props.onClose()
-            history.push('/UserFeed')
+            history.push('/UserFeed/')
       
           })
       }
