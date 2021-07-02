@@ -4,6 +4,6 @@ const GlobalContext = React.createContext({
     isLoggedIn: false,
     email:'',
     id:'',
-    onUpdate: ()=> undefined
+    // onUpdate: ()=> undefined
 })
 export default GlobalContext

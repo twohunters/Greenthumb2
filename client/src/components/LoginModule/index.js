@@ -35,7 +35,7 @@ const LoginModule = props => {
             props.onClose()
             const id = res.data.id
             history.push('/UserFeed/'+ id)
-              console.log(res.data.id)
+              console.log(res.data)
             //   const id = res.data._id
             // if(res.data.isLoggedin){
             //     user.onUpdate(res.data)
