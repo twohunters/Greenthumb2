@@ -14,7 +14,7 @@ import AddPlant from './pages/AddPlant'
 import GardenListView from './pages/GardenListview'
 import MenuContainer from './components/MenuContainer'
 import PlantForm from './pages/PlantForm';
-import TestPlantForm from './pages/TestPlantForm';
+// import TestPlantForm from './pages/PlantForm';
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
 <Route exact path='/UserFeed/:id' component={UserFeed}/>
 <Route exact path='/addplant' component={AddPlant}/>
 <Route exact path='/gardenlistview' component={GardenListView}/>
-<Route exact path='/PlantForm' component={TestPlantForm}/>
+<Route exact path='/PlantForm' component={PlantForm}/>
     </Switch>
     </Router>
 

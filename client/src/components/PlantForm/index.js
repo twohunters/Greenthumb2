@@ -1,18 +1,24 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bulma-components";
 import { Button } from "react-bulma-components";
-import { useHistory } from "react-router-dom";
-import API from "../utils/API";
+
+import API from "../../utils/API";
 
 const { Input, Field, Control, Label } = Form;
 
-const PlantForm = (props)=> {
-    const history = useHistory();
-    const [formObject, setFormObject] = useState({});
+const PlantForm = (props) => {
 
-    if (!props.show) {
-        return null
-    };
+    const [formObject, setFormObject] = useState({
+        name: "",
+        description: "",
+        plant_habit: "",
+        life_cylce: "",
+        sun_req: "",
+        water_req: "",
+        uses: "",
+        edible_parts: "",
+        time_to_fruit: 0
+    })
 
     function handleInputChange(event) {
         const { name, value } = event.target;
@@ -21,24 +27,20 @@ const PlantForm = (props)=> {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        API.savePlants({
-            plantName: formObject.plantName,
-            description: formObject.description,
-            habit: formObject.habit,
-            lifeCycle: formObject.lifeCycle,
-            sunReq: formObject.sunReq,
-            waterReq: formObject.waterReq,
-            uses: formObject.uses,
-            edible: formObject.edible,
-            time: formObject.time,
-            recipes: formObject.recipes
-        })
-            .then(res => {
-                const id = res.data._id
-                history.push("URL" + id)
-                props.onClose()
+        if (formObject.name) {
+            API.savePlants({
+                name: formObject.name,
+                description: formObject.description,
+                plant_habit: formObject.plant_habit,
+                life_cycle: formObject.life_cycle,
+                sun_req: formObject.sun_req,
+                water_req: formObject.water_req,
+                uses: formObject.uses,
+                edible_parts: formObject.edible_parts,
+                time_to_fruit: formObject.time_to_fruit
             })
-            .catch(err => console.log(err))
+            console.log(formObject)
+        }
     };
 
     return (
@@ -91,53 +93,6 @@ const PlantForm = (props)=> {
         </div>
     );
 }
-
-// function PlantForm() {
-//     return (
-//         <Form>
-//             <Form.Field>
-//                 <Form.Label>Plant Name</Form.Label>
-//                 <Form.Input type="text" name="plantName"></Form.Input>
-//             </Form.Field>
-//             <Form.Field>
-//                 <Form.Label>Description</Form.Label>
-//                 <Form.Input type="text" name="description"></Form.Input>
-//             </Form.Field>
-//             <Form.Field>
-//                 <Form.Label>Habit</Form.Label>
-//                 <Form.Input type="text" name="habit"></Form.Input>
-//             </Form.Field>
-//             <Form.Field>
-//                 <Form.Label>Life Cycle</Form.Label>
-//                 <Form.Input type="text" name="lifeCycle"></Form.Input>
-//             </Form.Field>
-//             <Form.Field>
-//                 <Form.Label>Sun Requirements</Form.Label>
-//                 <Form.Input type="text" name="sunReq"></Form.Input>
-//             </Form.Field>
-//             <Form.Field>
-//                 <Form.Label>Water Requirements</Form.Label>
-//                 <Form.Input type="text" name="waterReq"></Form.Input>
-//             </Form.Field>
-//             <Form.Field>
-//                 <Form.Label>Uses</Form.Label>
-//                 <Form.Input type="text" name="uses"></Form.Input>
-//             </Form.Field>
-//             <Form.Field>
-//                 <Form.Label>Edible</Form.Label>
-//                 <Form.Input type="text" name="edible"></Form.Input>
-//             </Form.Field>
-//             <Form.Field>
-//                 <Form.Label>Time to Fruit</Form.Label>
-//                 <Form.Input type="text" name="time"></Form.Input>
-//             </Form.Field>
-//             <Form.Field>
-//                 <Form.Label>Recipes</Form.Label>
-//                 <Form.Input type="text" name="recipes"></Form.Input>
-//             </Form.Field>
-//         </Form>
-//     )
-// }
 
 export default PlantForm;
 
