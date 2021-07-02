@@ -1,45 +1,35 @@
 import React,{useState,useEffect} from "react";
 import { Content } from "react-bulma-components";
-import { Heading } from "react-bulma-components";
 import { Box } from "react-bulma-components";
-import API from "../utils/API"
-import { useParams } from "react-router-dom";
-// import user data from user database
+import API from "../utils/API";
+import queryString from "query-string";
+import "./UserFeed.css";
 
 const UserFeed = props => {
-    
-    const [user,setUser]=useState([])
-    const{id} = useParams()
-useEffect(()=>{
-    getUser()
-},[])
-
-function getUser(req){
-    
-    API.getUser(id)
-    .then(res => {
-        console.log(res); setUser(res.data)
-       }
-       ).catch(err=> console.log(err))
-}
-
+    const values = queryString.parse(window.location.search)
+    console.log(values)
+    API.getUser()
     return (
-        <Content>
-            <Heading>
-            <span class="material-icons">person</span> Your Account
-            </Heading>
-            <Heading subtitle>
-                {user.firstName}
-            </Heading>
-            <Box>
-                <h3>About You</h3>
-                {user.about}
-            </Box>
-            <Box>
-                <h3>Your Gardens</h3>
-                {user.garden}
-            </Box>
-        </Content>
+        <div className="container">
+            <Content>
+                <Box className="section">
+                    <h1 className="title"><span class="material-icons">person</span> Your Account</h1>
+                    <h2 className="subtitle">{/* {props.firstName} {props.lastName} */}</h2>
+                </Box>
+                <Box>
+                    <h1 className="title">About You</h1>
+                    <div className="userContent">
+                        {/* <p>{props.userDescription}</p> */}
+                    </div>
+                </Box>
+                <Box>
+                    <h1 className="title">Your Gardens</h1>
+                    <div className="userContent">
+                        {/* <p>{props.userGardens}</p> */}
+                    </div>
+                </Box>
+            </Content>
+        </div>
     )
 }
 
