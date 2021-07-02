@@ -11,9 +11,10 @@ const SinglePlant= () => {
     const { id } = useParams()
     useEffect(() => {
         API.getPlant(id)
-            .then(res => { console.log(res); setPlant(res.data) })
+            .then(res =>  setPlant(res.data))
+            .then(()=> console.log(plant))
             .catch(err => console.log(err));
-    })
+    },)
 
     return (
         <container className="plantContainer">

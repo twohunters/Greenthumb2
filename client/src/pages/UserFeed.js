@@ -1,11 +1,12 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Content } from "react-bulma-components";
 import { Box } from "react-bulma-components";
+import { useParams } from "react-router-dom";
 import API from "../utils/API";
 import queryString from "query-string";
 import "./UserFeed.css";
 
-const UserFeed = props => {
+const UserFeed = () => {
     const values = queryString.parse(window.location.search)
     console.log(values)
     API.getUser()
@@ -14,18 +15,18 @@ const UserFeed = props => {
             <Content>
                 <Box className="section">
                     <h1 className="title"><span class="material-icons">person</span> Your Account</h1>
-                    <h2 className="subtitle">{/* {props.firstName} {props.lastName} */}</h2>
+                    {/* <h2 className="subtitle">{user.FirstName} {user.LastName}</h2> */}
                 </Box>
                 <Box>
                     <h1 className="title">About You</h1>
                     <div className="userContent">
-                        {/* <p>{props.userDescription}</p> */}
+                        {/* <p>{user.About}</p> */}
                     </div>
                 </Box>
                 <Box>
                     <h1 className="title">Your Gardens</h1>
                     <div className="userContent">
-                        {/* <p>{props.userGardens}</p> */}
+                        {/* <p>{user.userGardens}</p> */}
                     </div>
                 </Box>
             </Content>

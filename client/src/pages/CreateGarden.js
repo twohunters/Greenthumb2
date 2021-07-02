@@ -13,7 +13,7 @@ const CreateGarden = () => {
   //Setting our plant component's itial state to an empty array
   const [plants, setPlants] = useState([])
   //setting our formObject component with the name's and empty values we expect to have in the object
-  const [formObject, setFormObject] = useState({ plants: [], size: '', gardenName: '' })
+  const [formObject, setFormObject] = useState({ plants: [], size: '', gardenName: '', plantID: [] })
   //setting our userplant component inital state to an empty array
   const [userPlants, setUserPlants] = useState([])
   useEffect(() => {
@@ -72,7 +72,8 @@ const CreateGarden = () => {
     API.saveGarden({
       name: formObject.gardenName,
       plants: [formObject.plants],
-      size: formObject.size
+      size: formObject.size,
+      plantID: formObject.key
 
     })
     console.log(formObject)
@@ -148,7 +149,7 @@ const CreateGarden = () => {
                   style={{ margin: "4px" }}
                   onChange={handleInputChange}
                   name="plants"
-                  key={plant.id}
+                  key={plant._id}
                   data-value={plant.name}>
 
                   {plant.name}
