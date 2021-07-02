@@ -1,0 +1,20 @@
+.gardenContainer{
+ margin: 0 20% 50% 10px;
+
+}
+.boxContainer{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+  grid-gap: 10px;
+  background-color: #fff;
+  
+}
+
+.box{
+    background-color:rgb(0, 209, 178);
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+    
+}

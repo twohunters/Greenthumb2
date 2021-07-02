@@ -5,7 +5,7 @@ import API from "../utils/API";
 import queryString from "query-string";
 import "./UserFeed.css";
 
-const UserFeed = props => {
+const UserFeed = () => {
     const values = queryString.parse(window.location.search)
     console.log(values)
     API.getUser()
