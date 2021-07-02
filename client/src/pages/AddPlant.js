@@ -1,8 +1,8 @@
 import React from "react"
 import PlantForm from '../components/PlantForm'
-function Home(){
+function AddPlant(){
     return (
         <PlantForm/>
     )
 }
-export default Home
+export default AddPlant;

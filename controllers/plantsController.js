@@ -10,7 +10,8 @@ module.exports = {
     findById: function(req, res){
         db.Plant
         .findById(req.params.id)
-        .then(dbModel => res.json(dbModel));
+        .then(dbModel => res.json(dbModel))
+        .catch(err=>res.status(500).json(err));
     },
     create: function(req, res) {
         db.Plant

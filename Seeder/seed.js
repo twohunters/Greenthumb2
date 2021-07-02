@@ -245,7 +245,8 @@ Garden_id:"1b2"
 const gardenSeed = [{
    title: "garden1",
    user_id:"60d75c64d0c8264bc06604e",
-   plants: ["Arugala","Blueberry"]
+
+   plants: ["Arugala","Blueberry","Tomatoe","Pumpkin","Carrot","Thyme","Rosemary","Carrot","Corn"]
 }]
 db.User.deleteMany({})
     .then(()=> db.User.collection.insertMany(userSeed))
