@@ -9,7 +9,6 @@ export default {
 
     //get all plants
     getPlants: function () {
-        console.log("PING!!!")
         return axios.get("/api/plants/");
     },
     //get plant by id
