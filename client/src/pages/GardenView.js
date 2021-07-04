@@ -21,7 +21,7 @@ const GardenView = () => {
             console.log("GARDEN"+garden)
             console.log("PLANTS"+plants)
     })
-
+    
     return (
         <div className="gardenContainer">
             <h1>{garden.title}</h1>
@@ -30,7 +30,9 @@ const GardenView = () => {
                     {userPlantArray.map((value, index) =>{
                         return (
                             <Link to="/">
-                            <div key = {index} className="box">  
+                            <div key = {index}
+                             className="box"
+                             id>  
                                 <h2>{value}</h2>
                             </div>
                             </Link>

@@ -13,7 +13,7 @@ const CreateGarden = () => {
   //Setting our plant component's itial state to an empty array
   const [plants, setPlants] = useState([])
   //setting our formObject component with the name's and empty values we expect to have in the object
-  const [formObject, setFormObject] = useState({ plants: [], size: '', gardenName: '', plantID: [] })
+  const [formObject, setFormObject] = useState({ plants: [], size: '', gardenName: '' })
   //setting our userplant component inital state to an empty array
   const [userPlants, setUserPlants] = useState([])
   useEffect(() => {
@@ -42,6 +42,7 @@ const CreateGarden = () => {
         let currentPlants = [...formObject.plants];
         let tempArray = [...currentPlants, value]
         setFormObject({ ...formObject, plants: tempArray })
+        setUserPlants(tempArray)
       //if a checkbox is going from true to false, this code will remove that plant out of the array
       } if (ifCheck === false) {
         let tempArray = userPlants
@@ -49,6 +50,7 @@ const CreateGarden = () => {
         tempArray.splice(plantIndex, 1)
         setUserPlants(tempArray)
         value = tempArray;
+        setFormObject({...formObject, plants: value})
       }
     }
     //updating the formobject with the name and value of the selected size checkbox
@@ -65,15 +67,14 @@ const CreateGarden = () => {
 
   };
 
-// This function will post our data to our DB
+  // This function will post our data to our DB
   function handleFormSubmit(event) {
     console.log("BUTTON CLICK")
     event.preventDefault();
     API.saveGarden({
       name: formObject.gardenName,
       plants: [formObject.plants],
-      size: formObject.size,
-      plantID: formObject.key
+      size: formObject.size
 
     })
     console.log(formObject)
@@ -84,7 +85,7 @@ const CreateGarden = () => {
 
     <div className="container">
       <form>
-    
+
         <Form.Input
           onChange={handleInputChange}
           type="text"
@@ -139,38 +140,38 @@ const CreateGarden = () => {
             </Form.Control>
           </Form.Field>
           <div className="plantview">
-          <Form.Field >
-            <Form.Control>
-              <h1> Please select a plant from out database</h1>
-              {plants.map(plant => (
-                <Form.Checkbox
-                  type="checkbox"
-                  showPlants={false}
-                  style={{ margin: "4px" }}
-                  onChange={handleInputChange}
-                  name="plants"
-                  key={plant._id}
-                  data-value={plant.name}>
+            <Form.Field >
+              <Form.Control>
+                <h1> Please select a plant from out database</h1>
+                {plants.map(plant => (
+                  <Form.Checkbox
+                    type="checkbox"
+                    showPlants={false}
+                    style={{ margin: "4px" }}
+                    onChange={handleInputChange}
+                    name="plants"
+                    key={plant._id}
+                    data-value={plant.name}>
 
-                  {plant.name}
+                    {plant.name}
 
-                </Form.Checkbox>
-              ))}
-
-            
-            </Form.Control>
-          </Form.Field>
+                  </Form.Checkbox>
+                ))}
 
 
+              </Form.Control>
+            </Form.Field>
+
+
+          </div>
         </div>
+        <div class="formFooter">
+          <Link to="/PlantForm">Dont see a plant from your garden? Help the community by adding to our DB!</Link>
+          <Button color="primary" onClick={handleFormSubmit} >Submit Your Garden </Button>
         </div>
-        <div class=  "formFooter">
-        <Link to = "/PlantForm">Dont see a plant from your garden? Help the community by adding to our DB!</Link>
-        <Button color = "primary" onClick={handleFormSubmit} >Submit Your Garden </Button>
-        </div>
-       
+
       </form>
-      </div>
+    </div>
   )
 }
 
