@@ -2,10 +2,7 @@
 import axios from "axios";
 
 export default {
-    //weather api
-    cityWeather: function(city){
-        return axios.get('https://api.openweathermap.org/data/2.5/weather?q='+city+ '&units=imperial&appid=cdc889a6c131e078f10ee5db1d9fa2e8')
-    },
+
 
     //get all plants
     getPlants: function () {
