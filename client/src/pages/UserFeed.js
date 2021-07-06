@@ -32,13 +32,13 @@ const UserFeed = () => {
                     <h1 className="title">{user.firstName} {user.lastName}</h1>
                 </Block>
                 <Block>
-                <h1 className="subtitle">About You</h1>
+                    <h1 className="subtitle">About You</h1>
                     <div className="userContent">
                         <p>{user.about}</p>
                     </div>
                 </Block>
                 <Block>
-                <h1 className="subtitle">Your Gardens</h1>
+                    <h1 className="subtitle">Your Gardens</h1>
                     <div className="userContent">
                         <p>{user.Garden_id}</p>
                     </div>
