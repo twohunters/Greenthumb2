@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import API from "../../utils/API";
 import { useHistory } from "react-router-dom"
 import Global from '../../utils/Global'
+import Validate from 'react-validate-form'
 
 
 const LoginModule = props => {
@@ -26,7 +27,6 @@ const LoginModule = props => {
       };
       function handleFormSubmit(e){
           e.preventDefault()
-          
           API.findUser({
               email:formObject.Email,
               password:formObject.Password
@@ -51,6 +51,8 @@ const LoginModule = props => {
                     <h4 className="modal-title">Log In</h4>
                 </div>
                 <div className="modal-body">
+                    
+                        {({validate,errorMessages})=> (
                 <Form.Field>
                     <Form.Label>
                         Email
@@ -61,6 +63,7 @@ const LoginModule = props => {
                     </Form.Label>
                     <Form.Input onChange={handleInputChange} type='password' name='Password'/>
                 </Form.Field>
+
                 </div>
                 <div className="modal-footer">
                     <Button onClick={handleFormSubmit} align='right' className="button">Log In</Button> 
