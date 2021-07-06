@@ -13,7 +13,7 @@ const CreateGarden = () => {
   //Setting our plant component's itial state to an empty array
   const [plants, setPlants] = useState([])
   //setting our formObject component with the name's and empty values we expect to have in the object
-  const [formObject, setFormObject] = useState({ plants: [], size: '', gardenName: '', plantID: [] })
+  const [formObject, setFormObject] = useState({ plants: [], size: '', gardenName: ''})
   //setting our userplant component inital state to an empty array
   const [userPlants, setUserPlants] = useState([])
   useEffect(() => {
@@ -49,6 +49,7 @@ const CreateGarden = () => {
         tempArray.splice(plantIndex, 1)
         setUserPlants(tempArray)
         value = tempArray;
+        setFormObject({...setFormObject, plants:value})
       }
     }
     //updating the formobject with the name and value of the selected size checkbox
@@ -175,3 +176,4 @@ const CreateGarden = () => {
 }
 
 export default CreateGarden;
+

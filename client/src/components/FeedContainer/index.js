@@ -24,9 +24,7 @@ const FeedContainer = props => {
         <Content>
             {users.map(user=>(
                 <div>
-            <Image>
-                {user.userImage}
-            </Image>
+
             
             <Heading>
                 {user.firstName} {user.lastName}

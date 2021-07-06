@@ -1,4 +1,3 @@
-//slide 15
 import React, { useState, useEffect } from "react";
 import API from '../utils/API';
 import { useParams, Link } from "react-router-dom";
