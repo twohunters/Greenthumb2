@@ -48,7 +48,10 @@ const TestPlantForm = () => {
             <Card>
                 <form>
                     <div className="inputRow">
-                        <h1>Plant Name</h1>
+                        <h1 className="title">Add a Plant</h1>
+                    </div>
+                    <div className="inputRow">
+                        <h1 className="subtitle">Plant Name</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="plantName"
@@ -57,7 +60,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1>Plant Description</h1>
+                        <h1 className="subtitle">Plant Description</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="description"
@@ -66,7 +69,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1>Plant's Habit</h1>
+                        <h1 className="subtitle">Plant's Habit</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="plant_habit"
@@ -75,7 +78,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1>Plant's Life Cycle</h1>
+                        <h1 className="subtitle">Plant's Life Cycle</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="life_cycle"
@@ -84,7 +87,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1>Sun Requirments</h1>
+                        <h1 className="subtitle">Sun Requirments</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="sun_req"
@@ -93,7 +96,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1>Water Requirments</h1>
+                        <h1 className="subtitle">Water Requirments</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="water_req"
@@ -102,7 +105,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1>Plant uses</h1>
+                        <h1 className="subtitle">Plant uses</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="uses"
@@ -111,7 +114,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1>Edible Portion</h1>
+                        <h1 className="subtitle">Edible Portion</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="edible_parts"
@@ -120,7 +123,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1>Time to Fruit(In days)</h1>
+                        <h1 className="subtitle">Time to Fruit(In days)</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="time_to_fruit"
