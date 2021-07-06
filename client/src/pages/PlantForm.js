@@ -60,7 +60,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1 className="subtitle">Plant Description</h1>
+                        <h1 className="subtitle">Description</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="description"
@@ -69,7 +69,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1 className="subtitle">Plant's Habit</h1>
+                        <h1 className="subtitle">Habit</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="plant_habit"
@@ -78,7 +78,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1 className="subtitle">Plant's Life Cycle</h1>
+                        <h1 className="subtitle">Life Cycle</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="life_cycle"
@@ -105,7 +105,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1 className="subtitle">Plant uses</h1>
+                        <h1 className="subtitle">Common Uses</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="uses"
@@ -123,7 +123,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div className="inputRow">
-                        <h1 className="subtitle">Time to Fruit(In days)</h1>
+                        <h1 className="subtitle">Time to Fruit (in days)</h1>
                         <Form.Input
                             onChange={handleInputChange}
                             name="time_to_fruit"
@@ -132,7 +132,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div classname="btnContainer">
-                        <Button className="submitBtn" color="primary" onClick={handleFormSubmit}>Add the plant to our Data Base!</Button>
+                        <Button className="submitBtn" color="primary" onClick={handleFormSubmit}>Add the plant to our database!</Button>
                     </div>
                 </form>
             </Card>
