@@ -52,8 +52,6 @@ const LoginModule = props => {
                     <h4 className="modal-title">Log In</h4>
                 </div>
                 <div className="modal-body">
-                    
-                        {({validate,errorMessages})=> (
                 <Form.Field>
                     <Form.Label>
                         Email

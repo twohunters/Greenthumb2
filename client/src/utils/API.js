@@ -36,7 +36,7 @@ export default {
     },
     //save garden to db
     saveGarden: function(gardenData){
-        return axios.post("/api/gardens", gardenData);
+        return axios.post("/api/gardens", gardenData)
     },
 
 

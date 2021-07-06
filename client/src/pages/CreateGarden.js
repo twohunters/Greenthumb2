@@ -70,12 +70,13 @@ const CreateGarden = () => {
   function handleFormSubmit(event) {
     console.log("BUTTON CLICK")
     event.preventDefault();
+    const id = localStorage.getItem('id')
     API.saveGarden({
-      name: formObject.gardenName,
-      plants: [formObject.plants],
+      title: formObject.gardenName,
+      user_id: id,
+      // plants: [formObject.plants],
       size: formObject.size,
-      plantID: formObject.key
-
+      plant_id:formObject.plants
     })
     console.log(formObject)
 
@@ -150,8 +151,8 @@ const CreateGarden = () => {
                   style={{ margin: "4px" }}
                   onChange={handleInputChange}
                   name="plants"
-                  key={plant._id}
-                  data-value={plant.name}>
+                  // key={plant._id}
+                  data-value={plant._id}>
 
                   {plant.name}
 
@@ -159,7 +160,7 @@ const CreateGarden = () => {
               ))}
 
             
-            </Form.Control>
+            </Form.Control>_
           </Form.Field>
 
 
