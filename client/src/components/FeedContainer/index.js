@@ -17,7 +17,7 @@ const FeedContainer = props => {
 
     }
     return (
-        <div>
+        <div className="container">
             {users.length ? (
                 <Content>
                     {users.map(user => (
