@@ -23,6 +23,7 @@ const UserFeed = () => {
         .catch(err => console.log(err));
     }
     function getGardens(){
+        const userId = localStorage.getItem('id')
         API.findGardens({id:userId})
         .then(res =>  setGardens(res.data))
         .catch(err => console.log(err));
