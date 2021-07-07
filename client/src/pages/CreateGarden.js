@@ -51,7 +51,7 @@ const CreateGarden = () => {
         setFormObject({ ...formObject, plants: nameArray, plant_id: idArray })
         // setFormObject({ ...formObject, plant_id: idArray })
       //if a checkbox is going from true to false, this code will remove that plant out of the array
-      } else if (ifCheck === false) {
+      } if (ifCheck === false) {
         let tempArray = userPlants
         let plantIndex = userPlants.indexOf(value)
         tempArray.splice(plantIndex, 1)

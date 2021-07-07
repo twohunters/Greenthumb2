@@ -7,6 +7,7 @@ const GardenView = () => {
     //setting the inital state of out garden to an empty object
     const [userPlants, setUserPlants] = useState([])
     const [garden, setGarden] = useState({})
+    const [userPlantIds, setUserPlantIds]= useState([])
     // const [userPlants, setUserPlants] = useState([])
     const { id } = useParams()
     const userPlantArray = userPlants
@@ -15,10 +16,12 @@ const GardenView = () => {
             .then(res => { 
                  setGarden(res.data);
                 setUserPlants(res.data.plants)
+                setUserPlantIds(res.data.plant_id)
 })
             .catch(err => console.log(err));
             console.log(garden)
             console.log(userPlants)
+            console.log(userPlantIds)
     })
 
 
