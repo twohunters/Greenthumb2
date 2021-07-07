@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from '../utils/API';
-import { Link } from "react-router-dom";
-import { Button } from 'react-bulma-components';
+import { Card } from "react-bulma-components";
+import { Button } from "react-bulma-components";
 import { Form } from "react-bulma-components";
 import './PlantForm.css'
 
@@ -45,92 +45,97 @@ const TestPlantForm = () => {
     }
     return (
         <div className="container">
-            <form>
-                <div className="inputRow">
-                    <h1>Plant Name</h1>
-                    <Form.Input
-                        onChange={handleInputChange}
-                        name="plantName"
-                        placeholder="Ex: Corn"
-                    >
-                    </Form.Input>
-                </div>
-                <div className="inputRow">
-                    <h1>Plant Description</h1>
-                    <Form.Input
-                        onChange={handleInputChange}
-                        name="description"
-                        placeholder="Ex: Corn is a common vegitable in the American diet. Not to be confused with the band Korn."
-                    >
-                    </Form.Input>
-                </div>
-                <div className="inputRow">
-                    <h1>Plant's Habit</h1>
-                    <Form.Input
-                        onChange={handleInputChange}
-                        name="plant_habit"
-                        placeholder="Plant habit is a term defining a plant's overall shape and form."
-                    >
-                    </Form.Input>
-                </div>
-                <div className="inputRow">
-                    <h1>Plant's Life Cycle</h1>
-                    <Form.Input
-                        onChange={handleInputChange}
-                        name="life_cycle"
-                        placeholder="Biennials, Perennial or Annual"
-                    >
-                    </Form.Input>
-                </div>
-                <div className="inputRow">
-                    <h1>Sun Requirments</h1>
-                    <Form.Input
-                        onChange={handleInputChange}
-                        name="sun_req"
-                        placeholder="Ex: Full sun"
-                    >
-                    </Form.Input>
-                </div>
-                <div className="inputRow">
-                    <h1>Water Requirments</h1>
-                    <Form.Input
-                        onChange={handleInputChange}
-                        name="water_req"
-                        placeholder="Ex 1-2 inches a week"
-                    >
-                    </Form.Input>
-                </div>
-                <div className="inputRow">
-                    <h1>Plant uses</h1>
-                    <Form.Input
-                        onChange={handleInputChange}
-                        name="uses"
-                        placeholder="Ex: Brewed in tea to help with anxiety"
-                    >
-                    </Form.Input>
-                </div>
-                <div className="inputRow">
-                    <h1>Edible Portion</h1>
-                    <Form.Input
-                        onChange={handleInputChange}
-                        name="edible_parts"
-                        placeholder="Buds"
-                    >
-                    </Form.Input>
-                </div>
-                <div className="inputRow">
-                    <h1>Time to Fruit(In days)</h1>
-                    <Form.Input
-                        onChange={handleInputChange}
-                        name="time_to_fruit"
-                        placeholder="Please just enter a number"
-                    >
-                    </Form.Input>
-                </div>
-                <div classname="btnContainer">
-                    <Button className="submitBtn" color="primary" onClick={handleFormSubmit}>Add the plant to our Data Base!</Button>
-                </div>
-            </form>
+            <Card>
+                <form>
+                    <div className="inputRow">
+                        <h1 className="title">Add a Plant</h1>
+                    </div>
+                    <div className="inputRow">
+                        <h1 className="subtitle">Plant Name</h1>
+                        <Form.Input
+                            onChange={handleInputChange}
+                            name="plantName"
+                            placeholder="Ex: Corn"
+                        >
+                        </Form.Input>
+                    </div>
+                    <div className="inputRow">
+                        <h1 className="subtitle">Description</h1>
+                        <Form.Input
+                            onChange={handleInputChange}
+                            name="description"
+                            placeholder="Ex: Corn is a common vegitable in the American diet. Not to be confused with the band Korn."
+                        >
+                        </Form.Input>
+                    </div>
+                    <div className="inputRow">
+                        <h1 className="subtitle">Habit</h1>
+                        <Form.Input
+                            onChange={handleInputChange}
+                            name="plant_habit"
+                            placeholder="Plant habit is a term defining a plant's overall shape and form."
+                        >
+                        </Form.Input>
+                    </div>
+                    <div className="inputRow">
+                        <h1 className="subtitle">Life Cycle</h1>
+                        <Form.Input
+                            onChange={handleInputChange}
+                            name="life_cycle"
+                            placeholder="Biennials, Perennial or Annual"
+                        >
+                        </Form.Input>
+                    </div>
+                    <div className="inputRow">
+                        <h1 className="subtitle">Sun Requirments</h1>
+                        <Form.Input
+                            onChange={handleInputChange}
+                            name="sun_req"
+                            placeholder="Ex: Full sun"
+                        >
+                        </Form.Input>
+                    </div>
+                    <div className="inputRow">
+                        <h1 className="subtitle">Water Requirments</h1>
+                        <Form.Input
+                            onChange={handleInputChange}
+                            name="water_req"
+                            placeholder="Ex 1-2 inches a week"
+                        >
+                        </Form.Input>
+                    </div>
+                    <div className="inputRow">
+                        <h1 className="subtitle">Common Uses</h1>
+                        <Form.Input
+                            onChange={handleInputChange}
+                            name="uses"
+                            placeholder="Ex: Brewed in tea to help with anxiety"
+                        >
+                        </Form.Input>
+                    </div>
+                    <div className="inputRow">
+                        <h1 className="subtitle">Edible Portion</h1>
+                        <Form.Input
+                            onChange={handleInputChange}
+                            name="edible_parts"
+                            placeholder="Buds"
+                        >
+                        </Form.Input>
+                    </div>
+                    <div className="inputRow">
+                        <h1 className="subtitle">Time to Fruit (in days)</h1>
+                        <Form.Input
+                            onChange={handleInputChange}
+                            name="time_to_fruit"
+                            placeholder="Please just enter a number"
+                        >
+                        </Form.Input>
+                    </div>
+                    <div classname="btnContainer">
+                        <Button className="submitBtn" color="primary" onClick={handleFormSubmit}>Add the plant to our database!</Button>
+                    </div>
+                </form>
+            </Card>
         </div>
     )
 }

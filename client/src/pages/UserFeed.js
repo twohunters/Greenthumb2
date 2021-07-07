@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Card } from "react-bulma-components";
+import { Block } from "react-bulma-components";
 import API from "../utils/API";
 import "./UserFeed.css";
 import {Content,Box} from "react-bulma-components";
@@ -9,6 +11,7 @@ const UserFeed = () => {
     const { id } = useParams()
     
     useEffect(() => {
+
         getUser()
         getGardens()
         // console.log(id)
@@ -20,7 +23,6 @@ const UserFeed = () => {
         .catch(err => console.log(err));
     }
     function getGardens(){
-        const userId = localStorage.getItem('id')
         API.findGardens({id:userId})
         .then(res =>  setGardens(res.data))
         .catch(err => console.log(err));
@@ -61,17 +63,5 @@ const UserFeed = () => {
             </div>
          </div>
     )
-}
-
-export default UserFeed;
-
-// SLIDE 12 & 13
-
-
-        // _id:'',
-        // firstName:'',
-        // lastName:'',
-        // email:'',
-        // password: '',
-        // about: '',
-        // Garden_id: []
+                        }
+                        export default UserFeed 

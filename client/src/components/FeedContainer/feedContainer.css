@@ -1,0 +1,10 @@
+.container{
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.card{
+    margin: 1.5rem;
+    padding: 1.5rem;
+    max-width: 36rem;
+}
