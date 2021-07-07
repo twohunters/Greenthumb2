@@ -1,70 +1,57 @@
 # Greenthumb 2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Our new and improved vision of Greenthumb is a social network where users can design garden layouts, share them with others within the platform, and add new plants to our database. This app was built with React, designed with Bulma, follows an MVC format and stores data in a MongoDB database.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Type the following into your terminal or command line to copy this repository:
 
-### `npm test`
+`git clone git@github.com:twohunters/Greenthumb2.git`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install the necessary dependencies with `npm i` and run the program with `npm start`.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+xxxxxxxxxx
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Technology
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[React](https://reactjs.org/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Mongoose](https://mongoosejs.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[Bulma](https://bulma.io/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[Axios](https://www.npmjs.com/package/axios)
 
-## Learn More
+[Bcrypt](https://www.npmjs.com/package/bcrypt)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Concurrently](https://www.npmjs.com/package/concurrently)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Express-session](https://www.npmjs.com/package/express-session)
 
-### Code Splitting
+[Connect-mongodb-session](https://www.npmjs.com/package/connect-mongodb-session)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Google Fonts](https://fonts.google.com/icons)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Credits
 
-### Making a Progressive Web App
+[Jason Anderson](https://github.com/twohunters)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[Antonio Barrera](https://github.com/Abarrera123)
 
-### Advanced Configuration
+[Rayna Weinreb](https://github.com/raynagweinreb)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+You can directly email [Jason](mailto:jas.nanders.n@gmail.com), [Antonio](mailto:) or [Rayna](mailto:raynagweinreb@gmail.com) if you have any questions regarding our work.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
