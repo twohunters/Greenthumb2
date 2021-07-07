@@ -6,30 +6,34 @@ import API from "../utils/API";
 import "./UserFeed.css";
 import {Content,Box} from "react-bulma-components";
 const UserFeed = () => {
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState({})
     const [gardens,setGardens] = useState([])
     const { id } = useParams()
+    // const gardenName = gardens.title
     
     useEffect(() => {
 
         getUser()
         getGardens()
-        // console.log(id)
+        console.log(gardens)
        
     },[])
     function getUser(){
-        API.getUser()
+        API.getUser(id)
         .then(res =>  setUser(res.data))
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
+        console.log(gardens.user_id)
     }
     function getGardens(){
-        API.findGardens({id:userId})
-        .then(res =>  setGardens(res.data))
+        const userId = localStorage.getItem("Id");
+        
+        API.getGardens()
+        .then(res => {console.log(res) ; setGardens(res.data)})
         .catch(err => console.log(err));
     }
+    
     return (
         <div>
-        <h1>{user.firstName} </h1> 
         <div className="container">
              <Content>
                  <Box className="section">
@@ -47,13 +51,13 @@ const UserFeed = () => {
                      <div className="userContent">
                         { gardens.length ?(
                             <div>
-                                {gardens.map(garden=>(
+                                {/* {gardenName.map(garden=>(
                                     <div>
                                     <ul><li>{garden.title}
                                         </li></ul>
                                      </div>
                                 ))
-                                }
+                                } */}
                                 </div>
                                 ):(<h3>You have no gardens! Select Create a Garden to get started </h3>)
                             }
