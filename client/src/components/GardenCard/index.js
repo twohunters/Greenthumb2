@@ -10,7 +10,7 @@ const GardenCard = props => {
     useEffect(()=>{
         getGardens()
     },[])
-
+//Gets all gardens 
     function getGardens(){
         API.getGardens()
     

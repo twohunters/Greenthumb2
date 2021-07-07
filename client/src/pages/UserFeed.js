@@ -6,30 +6,34 @@ import API from "../utils/API";
 import "./UserFeed.css";
 import {Content,Box} from "react-bulma-components";
 const UserFeed = () => {
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState({})
     const [gardens,setGardens] = useState([])
     const { id } = useParams()
-
+    // const gardenName = gardens.title
+    
     useEffect(() => {
 
         getUser()
-        // getGardens()
-        // console.log(id)
-
+        getGardens()
+        console.log(gardens)
+       
     },[])
     function getUser(){
-        API.getUser()
+        API.getUser(id)
         .then(res =>  setUser(res.data))
+        .catch(err => console.log(err))
+        
+    }
+    function getGardens(){
+        // const userId = localStorage.getItem("id");
+        
+        API.findGardens({user_id:id})
+        .then(res => {console.log(res.data) ; setGardens(res.data)})
         .catch(err => console.log(err));
     }
-    // function getGardens(){
-    //     API.findGardens({id:userId})
-    //     .then(res =>  setGardens(res.data))
-    //     .catch(err => console.log(err));
-    // }
+    
     return (
         <div>
-        <h1>{user.firstName} </h1>
         <div className="container">
              <Content>
                  <Box className="section">

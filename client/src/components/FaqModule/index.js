@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import './faqModule.css'
 import {Button} from 'react-bulma-components';
 const FaqModule = props => {
+    //Makes the accordian style UI 
     const [isActive1, setIsActive1] = useState(false); 
     const [isActive2, setIsActive2] = useState(false); 
     const [isActive3, setIsActive3] = useState(false); 

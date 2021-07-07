@@ -15,7 +15,10 @@ const FeedContainer = props => {
             })
             .catch(err => console.log(err))
 
+
     }
+
+    
     return (
         <div className="container">
             {users.length ? (

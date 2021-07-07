@@ -40,7 +40,7 @@ export default {
     },
     //find garden's by user id 
     findGardens:function(userid){
-        return axios.post("/api/gardens/"+ userid)
+        return axios.post("/api/gardens/find", userid)
     },
 
 

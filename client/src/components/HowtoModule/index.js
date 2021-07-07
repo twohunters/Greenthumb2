@@ -19,11 +19,11 @@ const HowToModule = props => {
                 <div className="modal-body">
                 <ol>
                 <li>Sign Up</li>
-                <li>Click "Create a Garden"</li>
-                <li>Choose your garden size</li>
-                <li>Select your plants</li>
-                <li>View your garden</li>
-                <li>Don't forget to keep an eye on the weather!</li>
+                <li>1. Click "Create a Garden"</li>
+                <li>2. Choose your garden size</li>
+                <li>3.Select your plants</li>
+                <li>4. View your garden</li>
+                <li>5. Don't forget to keep an eye on the weather!</li>
                     </ol>
                 </div>
                 <div className="modal-footer">

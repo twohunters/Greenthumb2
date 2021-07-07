@@ -13,6 +13,8 @@ const PlantCard = props => {
     useEffect(() => {
         getPlants()
     }, [])
+
+    //Get all plants
     function getPlants() {
         API.getPlants()
             .then(res => {

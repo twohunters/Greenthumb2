@@ -13,4 +13,7 @@ router
   .put(gardensController.update)
   .delete(gardensController.remove);
 
+  router.route("/find")
+  .post(gardensController.find)
+
 module.exports = router;

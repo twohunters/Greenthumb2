@@ -1,8 +1,8 @@
 import React from "react"
-import FeedContainer from '../components/PlantCard'
+import PlantsCard from '../components/PlantCard'
 function AllPlants(){
     return (
-        <FeedContainer/>
+        <PlantsCard/>
     )
 }
 export default AllPlants
