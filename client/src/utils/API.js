@@ -38,6 +38,10 @@ export default {
     saveGarden: function(gardenData){
         return axios.post("/api/gardens", gardenData)
     },
+    //find garden's by user id 
+    findGardens:function(userid){
+        return axios.post("/api/gardens/"+ userid)
+    },
 
 
     //get all users

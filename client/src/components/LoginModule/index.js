@@ -21,11 +21,12 @@ const LoginModule = props => {
         return null
     }
 
-    
+    // Handles the input data 
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({...formObject, [name]: value})
       };
+      // Log in function after the user submits 
       function handleFormSubmit(e){
           e.preventDefault()
           API.findUser({

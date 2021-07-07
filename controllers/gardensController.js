@@ -1,6 +1,12 @@
 const db = require("../models")
 
 module.exports = {
+  
+    find:function(req,res){
+      db.Garden
+      .find({
+      user_id:req.body.id})
+    },
     findAll: function(req, res) {
         db.Garden
             .find(req.query)

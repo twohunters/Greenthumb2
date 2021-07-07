@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const GardenArray = new Schema({name:String})
+// const GardenArray = new Schema({name:String})
 const userSchema = new Schema({
     firstName:{
         type: String,
@@ -19,10 +19,10 @@ const userSchema = new Schema({
     about:{
         type:String
     },
-    Garden_id:{
-        type:[GardenArray],
-        default: undefined
-    }
+    // Garden_id:{
+    //     type:[GardenArray],
+    //     default: undefined
+    // }
 
 })
 const User = mongoose.model("User", userSchema)
