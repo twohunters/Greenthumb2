@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import API from "../../utils/API";
 import { Card } from "react-bulma-components";
 import { Content } from "react-bulma-components";
 
