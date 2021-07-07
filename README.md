@@ -17,7 +17,9 @@ Install the necessary dependencies with `npm i` and run the program with `npm st
 
 ## Usage
 
-xxxxxxxxxx
+At the homepage, users can view all of the most recent gardens created by other users on the Greenthumb platform. Users can create a profile with a unique email and password, and upon signup or logging in, will be directed to the Dashboard where they can view a list of their own created gardens. In the floating menu, users are presented with links to view all plants in the database as well as the ability add new plants, view all existing gardens, and view all other users, as well as their biographies and a list of their own personal gardens.
+
+Check out the deployed app on Heroku [here](https://herokuapp.com).
 
 
 ## Technology
@@ -51,7 +53,7 @@ xxxxxxxxxx
 
 [Rayna Weinreb](https://github.com/raynagweinreb)
 
-You can directly email [Jason](mailto:jas.nanders.n@gmail.com), [Antonio](mailto:) or [Rayna](mailto:raynagweinreb@gmail.com) if you have any questions regarding our work.
+You can directly email [Jason](mailto:jas.nanders.n@gmail.com), [Antonio](mailto:barrera.antonio@gmail.com) or [Rayna](mailto:raynagweinreb@gmail.com) if you have any questions regarding our work.
 
 
 ## License
