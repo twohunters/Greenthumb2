@@ -18,6 +18,7 @@ const CreateGarden = () => {
   const [userPlants, setUserPlants] = useState([])
   useEffect(() => {
     loadPlants()
+    
   }, [])
   //Load all plants and sets them to plants
   function loadPlants() {
@@ -74,7 +75,7 @@ const CreateGarden = () => {
     API.saveGarden({
       title: formObject.gardenName,
       user_id: id,
-      // plants: [formObject.plants],
+      plants: formObject.plants,
       size: formObject.size,
       plant_id:formObject.plants
     })
@@ -168,7 +169,9 @@ const CreateGarden = () => {
         </div>
         <div class=  "formFooter">
         <Link to = "/PlantForm">Dont see a plant from your garden? Help the community by adding to our DB!</Link>
-        <Button color = "primary" onClick={handleFormSubmit} >Submit Your Garden </Button>
+        
+        <Button color = "primary" onClick={handleFormSubmit} ><Link to ='/'>Submit Your Garden</Link> </Button>
+        
         </div>
        
       </form>

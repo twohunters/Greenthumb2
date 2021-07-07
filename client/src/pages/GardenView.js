@@ -5,21 +5,23 @@ import './GardenView.css'
 
 const GardenView = () => {
     //setting the inital state of out garden to an empty object
-    const [plants, setPlants] = useState([])
+    const [userPlants, setUserPlants] = useState([])
     const [garden, setGarden] = useState({})
     // const [userPlants, setUserPlants] = useState([])
     const { id } = useParams()
-    const userPlantArray = plants
+    const userPlantArray = userPlants
     useEffect(() => {
         API.getGarden(id)
             .then(res => { 
                  setGarden(res.data);
-                setPlants(res.data.plants)
+                setUserPlants(res.data.plants)
 })
             .catch(err => console.log(err));
-            console.log("GARDEN"+garden)
-            console.log("PLANTS"+plants)
+            console.log(garden)
+            console.log(userPlants)
     })
+
+
 
     return (
         <div className="gardenContainer">

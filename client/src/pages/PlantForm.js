@@ -3,6 +3,7 @@ import API from '../utils/API';
 import { Card } from "react-bulma-components";
 import { Button } from "react-bulma-components";
 import { Form } from "react-bulma-components";
+import { Link } from "react-router-dom";
 import './PlantForm.css'
 
 const { Input, Field, Control, Label, Checkbox, } = Form;
@@ -132,7 +133,7 @@ const TestPlantForm = () => {
                         </Form.Input>
                     </div>
                     <div classname="btnContainer">
-                        <Button className="submitBtn" color="primary" onClick={handleFormSubmit}>Add the plant to our database!</Button>
+                        <Button className="submitBtn" color="primary" onClick={handleFormSubmit}><Link to ='/'>Add the plant to our database!</Link></Button>
                     </div>
                 </form>
             </Card>

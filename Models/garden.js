@@ -5,9 +5,9 @@ const gardenSchema = new Schema({
     title: { type: String, required: true },
     user_id: { type: String, required: true },
     size: {type: String, required: true},
-    // plants: [{
-    //     type: String, require:true
-    // }]
+    plants: [{
+        type: String, require:true
+    }],
     plant_id:[{
         type: String 
 

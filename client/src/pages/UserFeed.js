@@ -9,27 +9,27 @@ const UserFeed = () => {
     const [user, setUser] = useState([])
     const [gardens,setGardens] = useState([])
     const { id } = useParams()
-    
+
     useEffect(() => {
 
         getUser()
-        getGardens()
+        // getGardens()
         // console.log(id)
-       
+
     },[])
     function getUser(){
         API.getUser()
         .then(res =>  setUser(res.data))
         .catch(err => console.log(err));
     }
-    function getGardens(){
-        API.findGardens({id:userId})
-        .then(res =>  setGardens(res.data))
-        .catch(err => console.log(err));
-    }
+    // function getGardens(){
+    //     API.findGardens({id:userId})
+    //     .then(res =>  setGardens(res.data))
+    //     .catch(err => console.log(err));
+    // }
     return (
         <div>
-        <h1>{user.firstName} </h1> 
+        <h1>{user.firstName} </h1>
         <div className="container">
              <Content>
                  <Box className="section">
@@ -64,4 +64,4 @@ const UserFeed = () => {
          </div>
     )
                         }
-                        export default UserFeed 
+                        export default UserFeed
