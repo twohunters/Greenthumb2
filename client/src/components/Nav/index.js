@@ -29,7 +29,7 @@ function Nav() {
                         <LoginModule onClose={() => setShowLogin(false)} show={showLogin} />
                         <Button onClick={() => setShowSignup(true)} color="primary">Sign Up</Button>
                         <SignUpModal onClose={() => setShowSignup(false)} show={showSignup} />
-                        <Button onClick={() => history.push('/UserFeed/'+ {id})} >My Account</Button>
+                        <Button onClick={() => history.push('/UserFeed/'+ id)} >My Account</Button>
                     </Navbar.Item>
                 </Navbar.Container>
             </Navbar>

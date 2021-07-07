@@ -10,9 +10,10 @@ const { Header, Title } = Card;
 const UserCard = props => {
     const history = useHistory()
     const [users, setUsers] = useState([])
-
+  
     useEffect(() => {
         getUsers()
+        
     }, [])
     //Get all users
     function getUsers() {
@@ -23,6 +24,8 @@ const UserCard = props => {
             .catch(err => console.log(err))
 
     }
+
+    
     return (
         <div className="container">
             {users.length ? (
@@ -34,9 +37,9 @@ const UserCard = props => {
                                     <span class="material-icons">person</span> {user.firstName} {user.lastName}
                                 </Card.Header.Title>
                             </Card.Header>
-                            <Card.Content>
-                                {user.Garden_id}
-                            </Card.Content>
+                            
+                           
+                            
                         </div>
                     ))}
                 </Content>
