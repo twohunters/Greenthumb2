@@ -13,7 +13,7 @@ const CreateGarden = () => {
   //Setting our plant component's itial state to an empty array
   const [plants, setPlants] = useState([])
   //setting our formObject component with the name's and empty values we expect to have in the object
-  const [formObject, setFormObject] = useState({ plants: [], size: '', gardenName: ''})
+  const [formObject, setFormObject] = useState({ plants: [], plant_id: [], size: '', gardenName: ''})
   //setting our userplant component inital state to an empty array
   const [userPlants, setUserPlants] = useState([])
   useEffect(() => {
@@ -31,19 +31,26 @@ const CreateGarden = () => {
   function handleInputChange(event) {
     const target = event.target;
     // const input = target.value;
-    let value = event.target.getAttribute("data-value")
+    let value = event.target.getAttribute("data-plant-name")
+    let plantId = event.target.getAttribute("data-plant-id")
     // returns true or false if the target is a checkbox
     const ifCheck = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     // this statement will place the value of the checkbox that has been checked for the plant section
     if (name === "plants") {
       //If check is true we update the formObject with the name of the plant
+      console.log(ifCheck)
       if (ifCheck === true) {
         let currentPlants = [...formObject.plants];
-        let tempArray = [...currentPlants, value]
-        setFormObject({ ...formObject, plants: tempArray })
+        let currentPlantIds = [...formObject.plant_id]
+        let nameArray = [...currentPlants, value];
+        console.log(nameArray)
+        let idArray = [...currentPlantIds, plantId];
+        console.log(idArray)
+        setFormObject({ ...formObject, plants: nameArray })
+        setFormObject({ ...formObject, plant_id: idArray })
       //if a checkbox is going from true to false, this code will remove that plant out of the array
-      } if (ifCheck === false) {
+      } else if (ifCheck === false) {
         let tempArray = userPlants
         let plantIndex = userPlants.indexOf(value)
         tempArray.splice(plantIndex, 1)
@@ -74,9 +81,9 @@ const CreateGarden = () => {
     API.saveGarden({
       title: formObject.gardenName,
       user_id: id,
-      // plants: [formObject.plants],
+      plant_id: formObject.plant_id,
       size: formObject.size,
-      plant_id:formObject.plants
+      plants:formObject.plants
     })
     console.log(formObject)
 
@@ -151,8 +158,9 @@ const CreateGarden = () => {
                   style={{ margin: "4px" }}
                   onChange={handleInputChange}
                   name="plants"
-                  // key={plant._id}
-                  data-value={plant._id}>
+                  key={plant._id}
+                  data-plant-name={plant.name}
+                  data-plant-id={plant._id}>
 
                   {plant.name}
 
