@@ -33,6 +33,7 @@ const CreateGarden = () => {
     const target = event.target;
     // const input = target.value;
     let value = event.target.getAttribute("data-plant-name")
+    let inputValue =event.target.getAttribute("data-value")
     let plantId = event.target.getAttribute("data-plant-id")
     // returns true or false if the target is a checkbox
     const ifCheck = target.type === 'checkbox' ? target.checked : target.value;
@@ -63,7 +64,7 @@ const CreateGarden = () => {
     //updating the formobject with the name and value of the selected size checkbox
     if (name === "size") {
       if (ifCheck === true) {
-        setFormObject({ ...formObject, [name]: value })
+        setFormObject({ ...formObject, [name]: inputValue })
       }
     }
     //updates the formobject with the name and value of the user's garden
