@@ -133,7 +133,7 @@ const PlantForm = (props) => {
                     >
                     </Form.Input>
                 </div>
-                <div classname="btnContainer">
+                <div className="btnContainer">
                     <Button className="submitBtn" color="primary" onClick={handleFormSubmit}>Add the plant to our Database!</Button>
                 </div>
             </form>

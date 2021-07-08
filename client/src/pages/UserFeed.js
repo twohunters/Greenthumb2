@@ -37,7 +37,7 @@ const UserFeed = () => {
             <div className="container">
                 <Card>
                     <Block>
-                        <h1 className="title"><span class="material-icons">person</span> Your Account</h1>
+                        <h1 className="title"><span class="material-icons">person</span> Account</h1>
                     </Block>
                     <Block>
                         <h2 className="subtitle">{user.firstName} {user.lastName}</h2>
