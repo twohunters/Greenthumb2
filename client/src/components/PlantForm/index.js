@@ -8,6 +8,7 @@ import API from "../../utils/API";
 const { Input, Field, Control, Label } = Form;
 
 const PlantForm = (props) => {
+    const history = useHistory()
 
     const [formObject, setFormObject] = useState({
         name: "",
@@ -28,9 +29,9 @@ const PlantForm = (props) => {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        if (formObject.name) {
+        if (formObject.plantName) {
             API.savePlants({
-                name: formObject.name,
+                name: formObject.plantName,
                 description: formObject.description,
                 plant_habit: formObject.plant_habit,
                 life_cycle: formObject.life_cycle,
@@ -39,7 +40,11 @@ const PlantForm = (props) => {
                 uses: formObject.uses,
                 edible_parts: formObject.edible_parts,
                 time_to_fruit: formObject.time_to_fruit
+            }).then(res=>{
+                const id = res.data._id;
+                history.push('/singleplant/'+id)
             })
+
             console.log(formObject)
         }
     };
@@ -129,7 +134,7 @@ const PlantForm = (props) => {
                     </Form.Input>
                 </div>
                 <div classname="btnContainer">
-                    <Button className="submitBtn" color="primary" onClick={handleFormSubmit}>Add the plant to our Data Base!</Button>
+                    <Button className="submitBtn" color="primary" onClick={handleFormSubmit}>Add the plant to our Database!</Button>
                 </div>
             </form>
         </div>

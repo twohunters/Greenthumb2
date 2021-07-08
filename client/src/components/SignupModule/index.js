@@ -32,8 +32,9 @@ const SignUpModal = props => {
             about: formObject.About
           })
           .then(res=>{
-            const id = res.data._id ;
-            localStorage.setItem('id',res.data._id)
+              console.log(res)
+            const id = res.data.id ;
+            localStorage.setItem('id',res.data.id)
         
             history.push('/UserFeed/'+ id)
             props.onClose()

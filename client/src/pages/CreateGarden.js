@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from 'react-bulma-components';
 import { Form } from "react-bulma-components";
 import './CreateGarden.css'
+import { useHistory } from "react-router-dom"
 
 const { Input, Field, Control, Label, Checkbox, } = Form;
 
@@ -16,6 +17,7 @@ const CreateGarden = () => {
   const [formObject, setFormObject] = useState({ plants: [], plant_id: [], size: '', gardenName: ''})
   //setting our userplant component inital state to an empty array
   const [userPlants, setUserPlants] = useState([])
+  const history = useHistory()
   useEffect(() => {
     loadPlants()
     
@@ -86,6 +88,9 @@ const CreateGarden = () => {
       plant_id: formObject.plant_id,
       size: formObject.size,
       plants:formObject.plants
+    }).then(res=>{
+      const id = res.data._id
+      history.push('/gardenview/'+id)
     })
     console.log(formObject)
 
@@ -179,7 +184,7 @@ const CreateGarden = () => {
         <div class=  "formFooter">
         <Link to = "/PlantForm">Dont see a plant from your garden? Help the community by adding to our DB!</Link>
         
-        <Button color = "primary" onClick={handleFormSubmit} ><Link to ='/'>Submit Your Garden</Link> </Button>
+        <Button color = "primary" onClick={handleFormSubmit} ><Link >Submit Your Garden</Link> </Button>
         
         </div>
        
