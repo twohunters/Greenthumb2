@@ -10,6 +10,7 @@ const GardenView = () => {
     const [userPlantIds, setUserPlantIds]= useState([])
     // const [userPlants, setUserPlants] = useState([])
     const { id } = useParams()
+    const userplantIDArray = userPlantIds
     const userPlantArray = userPlants
     useEffect(() => {
         API.getGarden(id)
@@ -31,13 +32,13 @@ const GardenView = () => {
             <h1>{garden.title}</h1>
             <div className="boxContainer">
                 
+
+     
                     {userPlantArray.map((value, index) =>{
                         return (
-                            <Link to="/">
-                            <div key = {index} className="box">  
+                            <div key = {index}  className="box">  
                                 <h2>{value}</h2>
                             </div>
-                            </Link>
                         )
                     })}
                 
